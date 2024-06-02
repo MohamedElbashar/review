@@ -17,7 +17,15 @@ export const APIResponse = (result: any, req: Request, res: Response, next: Func
             } else {
                 error = result;
             }
-            res.status(500).send(error.stack);
+            if(!['LOCAL', 'DEV', 'SIT'].includes(process.env.ENV)) {
+                console.error(error.stack);
+                res.status(500).send('oops!! something went wrong, please contact the administrator');
+            } 
+            else if(error?.response?.statusCode && error?.response?.body){
+                res.status(error.response.statusCode).send(error.response.body);
+            }
+            else
+                res.status(500).send(error.stack);
             next();
         }
     }

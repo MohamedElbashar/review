@@ -1,0 +1,41 @@
+{
+    "/master_data/find": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "master_data_apis"
+            ]
+        }
+    },
+    "/master_data/products": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "master_data_apis"
+            ]
+        }
+    },
+    "/master_data/add-ons": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "master_data_apis"
+            ]
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "/policy/search": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "policy_apis"
+            ]
+        }
+    }
+}

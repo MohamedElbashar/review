@@ -1,0 +1,192 @@
+{
+    "name": "address",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_foltlp57vi",
+    "y": 754.609375,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_wanj5zizhi",
+                "nullable": true,
+                "relation": {
+                    "type": "m2o",
+                    "targetEntity": "quote",
+                    "joinColumnReferencedColumnName": "address",
+                    "joinColumnName": "id",
+                    "onUpdate": "CASCADE",
+                    "onDelete": "CASCADE",
+                    "relationId": "",
+                    "inverseSide": "address",
+                    "cascade": false,
+                    "userDrawn": true,
+                    "eager": false,
+                    "joinColumnReferencedColumnNameRef": "quote",
+                    "jsType": "number",
+                    "required": false
+                }
+            },
+            "isRelationAttr": true
+        },
+        "title": {
+            "name": "title",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_m679km5ucg",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "address_line_1": {
+            "name": "address_line_1",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_46akkg25pw",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "address_line_2": {
+            "name": "address_line_2",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_shsgoooe99",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "building_number": {
+            "name": "building_number",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_b4khn6cr4i",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "street": {
+            "name": "street",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_h0g0o1ptxq",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "district": {
+            "name": "district",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_2ovt1ns6le",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "city": {
+            "name": "city",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_et0tc3vo4p",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "postal_code": {
+            "name": "postal_code",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_9go3t756dg",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        },
+        "postal_code_addl_number": {
+            "name": "postal_code_addl_number",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_2oxgbu9mg9",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        },
+        "unit_number": {
+            "name": "unit_number",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_05y3k1focg",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        },
+        "is_primary_address": {
+            "name": "is_primary_address",
+            "format": "",
+            "type": "boolean",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_g9gkuzcde0",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        },
+        "company_name": {
+            "name": "company_name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_7pr4e6zwlm",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        }
+    },
+    "required": [],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 473.890625,
+    "__unique__": {}
+}

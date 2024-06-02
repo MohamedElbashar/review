@@ -1,0 +1,55 @@
+{
+    "name": "risk_item",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_i9j2evl18h",
+    "y": 425,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_7iim4x1ms8",
+                "nullable": false
+            }
+        },
+        "id_type": {
+            "name": "id_type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_jrt3bavael",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "risk_item_type": {
+            "name": "risk_item_type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_vm4may5g3o",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "risk_item_type",
+        "id_type",
+        "id"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 970.890625,
+    "__unique__": {}
+}

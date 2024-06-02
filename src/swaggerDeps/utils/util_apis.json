@@ -1,0 +1,28 @@
+{
+    "/util/cache/data": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "util_apis"
+            ]
+        }
+    },
+    "/system-settings/update": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "util_apis"
+            ]
+        }
+    }
+}

@@ -21,9 +21,9 @@ const provider = new NodeTracerProvider({
     }),
 });
 
-const exporter = new ConsoleSpanExporter();
-const processor = new SimpleSpanProcessor(exporter);
-provider.addSpanProcessor(processor);
+// const exporter = new ConsoleSpanExporter();
+//const processor = new SimpleSpanProcessor();
+//provider.addSpanProcessor(processor);
 
 const collectorTraceExporter = new OTLPTraceExporter({
     url: process.env.NEU_TRACE_COLLECTOR_URL,
@@ -34,11 +34,7 @@ provider.register();
 
 registerInstrumentations({
     instrumentations: [
-        getNodeAutoInstrumentations({
-            '@opentelemetry/instrumentation-fs': {
-                enabled: false,
-              }
-        }),
+        getNodeAutoInstrumentations(),
         new ExpressInstrumentation(),
         new MongoDBInstrumentation({
             enhancedDatabaseReporting: true,

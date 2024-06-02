@@ -1,0 +1,80 @@
+{
+    "/driver/list": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addl_drivers_apis"
+            ]
+        }
+    },
+    "/driver/create": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addl_drivers_apis"
+            ]
+        }
+    },
+    "/driver/update": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addl_drivers_apis"
+            ]
+        }
+    },
+    "/driver/delete": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addl_drivers_apis"
+            ]
+        }
+    },
+    "/driver/link": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addl_drivers_apis"
+            ]
+        }
+    },
+    "/driver/unlink": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addl_drivers_apis"
+            ]
+        }
+    }
+}

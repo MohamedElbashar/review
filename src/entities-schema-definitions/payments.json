@@ -1,9 +1,0 @@
-{
-    "_DM_ytrifeg2w": {
-        "id": "_DM_ytrifeg2w",
-        "name": "payments",
-        "dbType": "dbModel",
-        "dbConfigId": "sd_ZCuYINqp64A4kzfu",
-        "dbName": "oracle"
-    }
-}

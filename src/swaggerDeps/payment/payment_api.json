@@ -1,0 +1,67 @@
+{
+    "/update_status": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "payment_api"
+            ]
+        }
+    },
+    "/payment/options": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "payment_api"
+            ]
+        }
+    },
+    "/payment/initiate": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "payment_api"
+            ]
+        }
+    },
+    "/balance_summary": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "payment_api"
+            ]
+        }
+    },
+    "/pending_payment_details": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "payment_api"
+            ]
+        }
+    }
+}

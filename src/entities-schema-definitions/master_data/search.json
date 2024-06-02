@@ -1,0 +1,70 @@
+{
+    "name": "search",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_o6mcar33hq",
+    "y": 47,
+    "properties": {
+        "code": {
+            "name": "code",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_fib73rxcdp",
+                "nullable": true,
+                "constraints": {},
+                "subCategoryType": "date"
+            }
+        },
+        "type": {
+            "name": "type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_dog55kipiv",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "make": {
+            "name": "make",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_f7gio9gjlq",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        },
+        "model": {
+            "name": "model",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_1xoff36fqx",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "type"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": true,
+    "x": 120.890625,
+    "userList": {},
+    "__n__metadata__": {}
+}

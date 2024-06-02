@@ -6,17 +6,14 @@ export default {
     logFile: 'logs/console.log',
   },
   middlewares: {
-    pre: [{ __ssdGlobalMiddlewares__: 'sd_Tp9jNbUvUZ1kJnAn' }],
+    pre: [{ __ssdGlobalMiddlewares__: 'cors' }],
     post: [],
-    sequences: {
-      serviceAccAuthorizedAPIs: {
-        pre: [{ middleware_flow: 'authorize' }],
-        post: [],
-      },
-      serviceAccAuthSadad: {
-        pre: [{ middleware_flow: 'sadad_authorize' }],
-        post: [],
-      },
-    },
+    sequences: {},
+  },
+  ids: {
+    client_id: 'process.env.IDS_CLIENT',
+    client_secret: 'process.env.IDS_SECRET',
+    issuerURL: 'process.env.IDS_URL',
+    enabled: true,
   },
 };

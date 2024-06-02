@@ -1,0 +1,42 @@
+{
+    "/dm/quote_management/quote/update-all": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "filter": {
+                                "type": "object",
+                                "properties": {}
+                            },
+                            "quote": {
+                                "$ref": "#/definitions/quote_management ~ quote",
+                                "required": []
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/quote_management ~ quote"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "quote"
+            ]
+        }
+    }
+}

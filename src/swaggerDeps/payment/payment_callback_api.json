@@ -1,0 +1,15 @@
+{
+    "/issue-policy": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "payment_callback_api"
+            ]
+        }
+    }
+}

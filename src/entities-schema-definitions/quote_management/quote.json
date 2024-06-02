@@ -1,0 +1,180 @@
+{
+    "name": "quote",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_k3pc1nknge",
+    "y": 516.609375,
+    "properties": {
+        "customer_id": {
+            "name": "customer_id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_9ts751qzw5",
+                "nullable": false,
+                "constraints": {},
+                "primary": false
+            }
+        },
+        "address": {
+            "name": "address",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_zy1pscbe14",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        },
+        "risk_item": {
+            "name": "risk_item",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_yhgdbxpkg5",
+                "subCategoryType": null,
+                "nullable": false,
+                "constraints": {}
+            }
+        },
+        "status": {
+            "name": "status",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_27z6ibywev",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "name4": {
+            "name": "name4",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_2jzamri09b",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "name5": {
+            "name": "name5",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_sur550i7c9",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "name6": {
+            "name": "name6",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_z8y02xs7n4",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "address0": {
+            "name": "address0",
+            "format": "",
+            "type": "address",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_m1k2w3tvpk",
+                "nullable": false,
+                "dbType": "",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {},
+                "relation": {
+                    "type": "o2m",
+                    "targetEntity": "address",
+                    "joinColumnReferencedColumnName": "id",
+                    "joinColumnName": "address0",
+                    "onUpdate": "CASCADE",
+                    "onDelete": "CASCADE",
+                    "relationId": "",
+                    "inverseSide": "id",
+                    "userDrawn": true,
+                    "eager": false,
+                    "joinColumnReferencedColumnNameRef": "",
+                    "currentColumn": "address",
+                    "required": false
+                }
+            },
+            "isDummyAttr": true
+        }
+    },
+    "required": [
+        "name4",
+        "name5",
+        "name6",
+        "customer_id",
+        "address",
+        "risk_item",
+        "status"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 40,
+    "userList": {
+        "SSD_SERVICE_ID_sd_zVhVXjonU2g5De0G": [
+            "sd_GbczNDysmvXPOusE"
+        ]
+    },
+    "__unique__": {
+        "default__quote__address": [
+            "address"
+        ]
+    },
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create"
+            },
+            {
+                "name": "create-all"
+            },
+            {
+                "name": "delete-all"
+            },
+            {
+                "name": "delete-by-id"
+            },
+            {
+                "name": "find-all"
+            },
+            {
+                "name": "find-by-id"
+            },
+            {
+                "name": "update-all"
+            },
+            {
+                "name": "update-by-id"
+            }
+        ]
+    }
+}

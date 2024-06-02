@@ -1,0 +1,69 @@
+{
+    "/quote/create": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/update": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/summary": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/summary-pdf": {},
+    "/quote/share": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/send-upload-sms": {},
+    "/quote/customer/decision": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    }
+}

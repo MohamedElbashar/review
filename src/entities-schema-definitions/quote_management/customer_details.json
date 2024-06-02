@@ -1,0 +1,54 @@
+{
+    "name": "customer_details",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_ufezzu03q4",
+    "y": 10,
+    "properties": {
+        "id_type": {
+            "name": "id_type",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_f116feq46e",
+                "nullable": false
+            }
+        },
+        "id_number": {
+            "name": "id_number",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_f594zdfo7j",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "date_of_birth": {
+            "name": "date_of_birth",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ylzlw2q9iw",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "id_type",
+        "id_number",
+        "date_of_birth"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 440
+}

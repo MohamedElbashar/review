@@ -1,0 +1,41 @@
+{
+    "/addons/list": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addon_apis"
+            ]
+        }
+    },
+    "/addons/create": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addon_apis"
+            ]
+        }
+    },
+    "/addons/delete": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addon_apis"
+            ]
+        }
+    }
+}

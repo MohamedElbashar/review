@@ -1,0 +1,106 @@
+{
+    "/risk_item/list": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    },
+    "/risk_item/create": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    },
+    "/risk_item/sme/create": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    },
+    "/risk_item/update": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    },
+    "/risk_item/delete": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    },
+    "/risk_item/sme/upload_v1": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    },
+    "/risk_item/link_product": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    },
+    "/risk_item/sme/upload": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "risk_item_apis"
+            ]
+        }
+    }
+}

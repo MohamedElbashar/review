@@ -5,7 +5,7 @@
 import * as cors from 'cors'; //_splitter_
 //append_imports_end
 export let Middlewares = {
-  sd_Tp9jNbUvUZ1kJnAn: () => {
+  cors: () => {
     let corsOptions = {
       origin: ['http://localhost:4200'],
 

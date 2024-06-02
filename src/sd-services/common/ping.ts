@@ -98,10 +98,10 @@ export class ping {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_KPko2eppTS05xvlX(bh, parentSpanInst);
-          //appendnew_next_sd_2S55DMJUQao8kH0I
+          bh = await this.sd_g7nFWWZRazBAJU9R(bh, parentSpanInst);
+          //appendnew_next_sd_7pCflhMmX0CmFD7q
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_2S55DMJUQao8kH0I');
+          return await this.errorHandler(bh, e, 'sd_7pCflhMmX0CmFD7q');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -116,41 +116,41 @@ export class ping {
 
   //appendnew_flow_ping_start
 
-  async sd_KPko2eppTS05xvlX(bh, parentSpanInst) {
+  async sd_g7nFWWZRazBAJU9R(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_KPko2eppTS05xvlX',
+      'sd_g7nFWWZRazBAJU9R',
       parentSpanInst
     );
     try {
       const { version: version } = require('../../../package.json');
 
       bh.payload = {
-        STATUS: 'PAYMENT MS SSD IS UP & RUNNING',
+        STATUS: 'SALES MS SSD IS UP & RUNNING',
         ENV: bh.system.environment.ENV,
         VERSION: version,
       };
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_RT79GKcQfQKHB56K(bh, parentSpanInst);
-      //appendnew_next_sd_KPko2eppTS05xvlX
+      await this.sd_5MMVYWqitx9yTQzZ(bh, parentSpanInst);
+      //appendnew_next_sd_g7nFWWZRazBAJU9R
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_KPko2eppTS05xvlX',
+        'sd_g7nFWWZRazBAJU9R',
         spanInst,
-        'sd_KPko2eppTS05xvlX'
+        'sd_g7nFWWZRazBAJU9R'
       );
     }
   }
 
-  async sd_RT79GKcQfQKHB56K(bh, parentSpanInst) {
+  async sd_5MMVYWqitx9yTQzZ(bh, parentSpanInst) {
     try {
       bh.web.res.status(200).send(bh.payload);
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_RT79GKcQfQKHB56K');
+      return await this.errorHandler(bh, e, 'sd_5MMVYWqitx9yTQzZ');
     }
   }
 

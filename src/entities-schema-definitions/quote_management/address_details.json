@@ -1,0 +1,53 @@
+{
+    "name": "address_details",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_fhkp7r6fpo",
+    "y": 10,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_mwy6t90p40",
+                "nullable": false
+            }
+        },
+        "id_type": {
+            "name": "id_type",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_g0b3cqc0tl",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "language": {
+            "name": "language",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_d9dtpsazy5",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        }
+    },
+    "required": [
+        "id",
+        "id_type"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 20
+}

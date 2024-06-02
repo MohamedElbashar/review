@@ -1,0 +1,142 @@
+{
+    "name": "customer",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_g59cp4rytq",
+    "y": 286,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_uv5j9pr88e",
+                "nullable": true
+            }
+        },
+        "first_name": {
+            "name": "first_name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_cg1ehzly46",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "last_name": {
+            "name": "last_name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_udqstulvz8",
+                "subCategoryType": null,
+                "nullable": true
+            }
+        },
+        "id_type": {
+            "name": "id_type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_y8k9yoeu09",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "date_of_birth": {
+            "name": "date_of_birth",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_1q5r9rsapw",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "gender": {
+            "name": "gender",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_azmsk3f3k5",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "occupation": {
+            "name": "occupation",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_3ixp7tznji",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "nationality": {
+            "name": "nationality",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_i4msxw5uc0",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "ncd_level": {
+            "name": "ncd_level",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_iyydbgxomd",
+                "subCategoryType": null,
+                "nullable": false
+            }
+        },
+        "addl_details": {
+            "name": "addl_details",
+            "format": "",
+            "type": "object",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_gp037vcgy9",
+                "subCategoryType": null,
+                "nullable": true,
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "date_of_birth",
+        "id_type",
+        "gender",
+        "occupation",
+        "nationality"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 472.890625,
+    "__unique__": {}
+}
