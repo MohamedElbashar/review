@@ -1,0 +1,29 @@
+{
+    "/quote/summary": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_api"
+            ]
+        }
+    },
+    "/quote/summary-pdf": {},
+    "/quote/send-upload-sms": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_api"
+            ]
+        }
+    }
+}

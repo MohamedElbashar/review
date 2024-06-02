@@ -1,7 +1,7 @@
 export default {
     "db-config": {
-        "sd_WHkUKctMiVlUgxd1": {
-            "id": "sd_WHkUKctMiVlUgxd1",
+        "sd_PAn3ldS7gfeR4M1H": {
+            "id": "sd_PAn3ldS7gfeR4M1H",
             "type": "db-config",
             "viewType": "server",
             "nodeType": "flow",

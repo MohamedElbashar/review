@@ -112,7 +112,7 @@ export class customer_type_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_tpzJ33CnYUILYBTF',
+        'sd_HZ5QLMnBz2EDfXC1',
         spanInst,
         'customerTypeList'
       );
@@ -125,23 +125,23 @@ export class customer_type_cache {
     try {
       bh.local.customer_type = this.customer_type_list;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_f8UZR7GYoVcCBqYB(bh, parentSpanInst);
+      bh = await this.sd_3i6RqLEMa0bivZMc(bh, parentSpanInst);
       //appendnew_next_getCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_cYqxuRTohoZtMkPO',
+        'sd_JNz2ChyhDm1w9ebV',
         spanInst,
         'getCache'
       );
     }
   }
 
-  async sd_f8UZR7GYoVcCBqYB(bh, parentSpanInst) {
+  async sd_3i6RqLEMa0bivZMc(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_f8UZR7GYoVcCBqYB',
+      'sd_3i6RqLEMa0bivZMc',
       parentSpanInst
     );
     try {
@@ -171,9 +171,9 @@ export class customer_type_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_f8UZR7GYoVcCBqYB',
+        'sd_3i6RqLEMa0bivZMc',
         spanInst,
-        'sd_f8UZR7GYoVcCBqYB'
+        'sd_3i6RqLEMa0bivZMc'
       );
     }
   }
@@ -190,7 +190,7 @@ export class customer_type_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_JUgoZkRAbC2o66WE',
+        'sd_EAjzbdQDbQQdt7LM',
         spanInst,
         'setUrl'
       );
@@ -205,7 +205,7 @@ export class customer_type_cache {
         method: 'post',
         headers: {},
         followRedirects: true,
-        cookies: undefined,
+        cookies: {},
         authType: undefined,
         body: undefined,
         paytoqs: false,
@@ -242,17 +242,17 @@ export class customer_type_cache {
       );
 
       bh.local.customer_type = responseMsg;
-      bh = await this.sd_Qbr6hfDIFsd8x0xF(bh, parentSpanInst);
+      bh = await this.sd_35OswgSPpRbzhspw(bh, parentSpanInst);
       //appendnew_next_httpPermissionList
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_Q32UfaTFcXz6ehIN');
+      return await this.errorHandler(bh, e, 'sd_FCDFvro95AD5mH0d');
     }
   }
 
-  async sd_Qbr6hfDIFsd8x0xF(bh, parentSpanInst) {
+  async sd_35OswgSPpRbzhspw(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_Qbr6hfDIFsd8x0xF',
+      'sd_35OswgSPpRbzhspw',
       parentSpanInst
     );
     try {
@@ -263,15 +263,15 @@ export class customer_type_cache {
       });
       this.tracerService.sendData(spanInst, bh);
       bh = await this.setCache(bh, parentSpanInst);
-      //appendnew_next_sd_Qbr6hfDIFsd8x0xF
+      //appendnew_next_sd_35OswgSPpRbzhspw
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Qbr6hfDIFsd8x0xF',
+        'sd_35OswgSPpRbzhspw',
         spanInst,
-        'sd_Qbr6hfDIFsd8x0xF'
+        'sd_35OswgSPpRbzhspw'
       );
     }
   }
@@ -287,7 +287,7 @@ export class customer_type_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_uZH5tiQQPuKtO5zN',
+        'sd_C83NxaJOPfVMvEuU',
         spanInst,
         'setCache'
       );

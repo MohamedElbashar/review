@@ -81,28 +81,30 @@ export class flows {
   }
   //   service flows_flows
 
-  async generateToken(parentSpanInst, ...others) {
+  async getMakeImage(parentSpanInst, eska_make = 0, ...others) {
     const spanInst = this.tracerService.createSpan(
-      'generateToken',
+      'getMakeImage',
       parentSpanInst
     );
     let bh: any = {
-      input: {},
+      input: {
+        eska_make,
+      },
       local: {
-        token: '',
+        image_url: '',
       },
     };
     try {
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst);
-      //appendnew_next_generateToken
+      bh = await this.setUrl3(bh, parentSpanInst);
+      //appendnew_next_getMakeImage
       return (
         // formatting output variables
         {
           input: {},
           local: {
-            token: bh.local.token,
+            image_url: bh.local.image_url,
           },
         }
       );
@@ -110,62 +112,45 @@ export class flows {
       return await this.errorHandler(
         bh,
         e,
-        'sd_O3UwLd9cGeMf90DU',
+        'sd_5kXxvwBIXhTdsqwA',
         spanInst,
-        'generateToken'
+        'getMakeImage'
       );
     }
   }
   //appendnew_flow_flows_start
 
-  async sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_Lg3RdEtxSC73l8Dx',
-      parentSpanInst
-    );
+  async setUrl3(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan('setUrl3', parentSpanInst);
     try {
-      const querystring = require('querystring');
-
-      bh.url = `${process.env.IDS_PAYMENT_URL}/token`;
-      bh.headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      };
-
-      let body = {
-        client_id: process.env.IDS_PAYMENT_CLIENT,
-        client_secret: process.env.IDS_PAYMENT_SECRET,
-        grant_type: 'client_credentials',
-        rejectUnauthorized: true,
-      };
-
-      bh.payload = querystring.stringify(body);
-
+      bh.url =
+        process.env.INT_MS_URL + 'strapi/vehicle-image/' + bh.input.eska_make;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_egv4fOVHuB7Abc1i(bh, parentSpanInst);
-      //appendnew_next_sd_Lg3RdEtxSC73l8Dx
+      bh = await this.sd_I6sVnO4yIQWNIF6M(bh, parentSpanInst);
+      //appendnew_next_setUrl3
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Lg3RdEtxSC73l8Dx',
+        'sd_9xlnhift56GOjupX',
         spanInst,
-        'sd_Lg3RdEtxSC73l8Dx'
+        'setUrl3'
       );
     }
   }
 
-  async sd_egv4fOVHuB7Abc1i(bh, parentSpanInst) {
+  async sd_I6sVnO4yIQWNIF6M(bh, parentSpanInst) {
     try {
       let requestOptions: any = {
         url: bh.url,
         timeout: 30000,
         method: 'post',
-        headers: bh.headers,
+        headers: {},
         followRedirects: true,
         cookies: {},
         authType: undefined,
-        body: bh.payload,
+        body: undefined,
         paytoqs: false,
         proxyConfig: undefined,
         tlsConfig: undefined,
@@ -199,65 +184,33 @@ export class flows {
         requestOptions.token
       );
 
-      bh.result = responseMsg;
-      bh = await this.sd_pzVPoiJPeA757PxA(bh, parentSpanInst);
-      //appendnew_next_sd_egv4fOVHuB7Abc1i
+      bh.response = responseMsg;
+      bh = await this.setResponse3(bh, parentSpanInst);
+      //appendnew_next_sd_I6sVnO4yIQWNIF6M
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_egv4fOVHuB7Abc1i');
+      return await this.errorHandler(bh, e, 'sd_I6sVnO4yIQWNIF6M');
     }
   }
 
-  async sd_pzVPoiJPeA757PxA(bh, parentSpanInst) {
+  async setResponse3(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_pzVPoiJPeA757PxA',
+      'setResponse3',
       parentSpanInst
     );
     try {
-      if (
-        this.sdService.operators['nnull'](
-          bh.result['payload'],
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = await this.sd_iVhQvH98yclfo8C5(bh, parentSpanInst);
-      }
+      bh.payload = bh.response['payload'];
+      bh.local.image_url = bh.payload?.image_url;
       this.tracerService.sendData(spanInst, bh);
-
+      //appendnew_next_setResponse3
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_pzVPoiJPeA757PxA',
+        'sd_SYXz6kT2Cg3zmkrK',
         spanInst,
-        'sd_pzVPoiJPeA757PxA'
-      );
-    }
-  }
-
-  async sd_iVhQvH98yclfo8C5(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_iVhQvH98yclfo8C5',
-      parentSpanInst
-    );
-    try {
-      bh.local.token = `${bh.result['payload']['token_type']} ${bh.result['payload']['access_token']}`;
-      bh.expiry = bh.result['payload']['expires_in'];
-
-      console.log(bh.local.token);
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_iVhQvH98yclfo8C5
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_iVhQvH98yclfo8C5',
-        spanInst,
-        'sd_iVhQvH98yclfo8C5'
+        'setResponse3'
       );
     }
   }

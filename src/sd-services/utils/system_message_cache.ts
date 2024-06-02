@@ -7,7 +7,8 @@ import { SDBaseService } from '../../services/SDBaseService'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 //append_imports_end
-export class flows {
+export class system_message_cache {
+  public systemMessages: any;
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -23,7 +24,7 @@ export class flows {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'flows';
+    this.serviceName = 'system_message_cache';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -38,7 +39,7 @@ export class flows {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new flows(
+      instance = new system_message_cache(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -67,42 +68,50 @@ export class flows {
   }
 
   async mountTimers() {
-    //appendnew_flow_flows_TimerStart
+    //appendnew_flow_system_message_cache_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: flows');
-    //appendnew_flow_flows_MiddlewareStart
+    log.debug('mounting all middlewares for service :: system_message_cache');
+    //appendnew_flow_system_message_cache_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: flows');
-    //appendnew_flow_flows_HttpIn
+    log.debug('mounting all paths for service :: system_message_cache');
+    //appendnew_flow_system_message_cache_HttpIn
   }
-  //   service flows_flows
+  //   service flows_system_message_cache
 
-  async generateToken(parentSpanInst, ...others) {
+  async getMessage(
+    parentSpanInst,
+    messageCode = '',
+    localeCode = 'en',
+    ...others
+  ) {
     const spanInst = this.tracerService.createSpan(
-      'generateToken',
+      'getMessage',
       parentSpanInst
     );
     let bh: any = {
-      input: {},
+      input: {
+        messageCode,
+        localeCode,
+      },
       local: {
-        token: '',
+        message: '',
       },
     };
     try {
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst);
-      //appendnew_next_generateToken
+      bh = await this.getMsgCache(bh, parentSpanInst);
+      //appendnew_next_getMessage
       return (
         // formatting output variables
         {
           input: {},
           local: {
-            token: bh.local.token,
+            message: bh.local.message,
           },
         }
       );
@@ -110,62 +119,110 @@ export class flows {
       return await this.errorHandler(
         bh,
         e,
-        'sd_O3UwLd9cGeMf90DU',
+        'sd_GDspqoTpHlLULTdU',
         spanInst,
-        'generateToken'
+        'getMessage'
       );
     }
   }
-  //appendnew_flow_flows_start
+  //appendnew_flow_system_message_cache_start
 
-  async sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst) {
+  async getMsgCache(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_Lg3RdEtxSC73l8Dx',
+      'getMsgCache',
       parentSpanInst
     );
     try {
-      const querystring = require('querystring');
-
-      bh.url = `${process.env.IDS_PAYMENT_URL}/token`;
-      bh.headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      };
-
-      let body = {
-        client_id: process.env.IDS_PAYMENT_CLIENT,
-        client_secret: process.env.IDS_PAYMENT_SECRET,
-        grant_type: 'client_credentials',
-        rejectUnauthorized: true,
-      };
-
-      bh.payload = querystring.stringify(body);
-
+      bh.local.allMessages = this.systemMessages;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_egv4fOVHuB7Abc1i(bh, parentSpanInst);
-      //appendnew_next_sd_Lg3RdEtxSC73l8Dx
+      bh = await this.checkCache(bh, parentSpanInst);
+      //appendnew_next_getMsgCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Lg3RdEtxSC73l8Dx',
+        'sd_aPGyI8wZ2CwZoFwk',
         spanInst,
-        'sd_Lg3RdEtxSC73l8Dx'
+        'getMsgCache'
       );
     }
   }
 
-  async sd_egv4fOVHuB7Abc1i(bh, parentSpanInst) {
+  async checkCache(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'checkCache',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['empty'](
+          bh.local.allMessages,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_uwiCxt5GaWONQXUa(bh, parentSpanInst);
+      } else if (
+        this.sdService.operators['null'](
+          bh.local.allMessages,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_uwiCxt5GaWONQXUa(bh, parentSpanInst);
+      } else {
+        bh = await this.sd_vav4MwGkf04v7BT4(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_OKtZCc8rUZosdLTV',
+        spanInst,
+        'checkCache'
+      );
+    }
+  }
+
+  async sd_uwiCxt5GaWONQXUa(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_uwiCxt5GaWONQXUa',
+      parentSpanInst
+    );
+    try {
+      bh.url = process.env.DB_API_URL + 'utils/system-messages';
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_M1TdMqWtzuVJlUEU(bh, parentSpanInst);
+      //appendnew_next_sd_uwiCxt5GaWONQXUa
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_uwiCxt5GaWONQXUa',
+        spanInst,
+        'sd_uwiCxt5GaWONQXUa'
+      );
+    }
+  }
+
+  async sd_M1TdMqWtzuVJlUEU(bh, parentSpanInst) {
     try {
       let requestOptions: any = {
         url: bh.url,
         timeout: 30000,
         method: 'post',
-        headers: bh.headers,
+        headers: {},
         followRedirects: true,
         cookies: {},
         authType: undefined,
-        body: bh.payload,
+        body: undefined,
         paytoqs: false,
         proxyConfig: undefined,
         tlsConfig: undefined,
@@ -199,65 +256,80 @@ export class flows {
         requestOptions.token
       );
 
-      bh.result = responseMsg;
-      bh = await this.sd_pzVPoiJPeA757PxA(bh, parentSpanInst);
-      //appendnew_next_sd_egv4fOVHuB7Abc1i
+      bh.local.allMessages = responseMsg;
+      bh = await this.sd_zCIUMFSZ9fUNtgC8(bh, parentSpanInst);
+      //appendnew_next_sd_M1TdMqWtzuVJlUEU
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_egv4fOVHuB7Abc1i');
+      return await this.errorHandler(bh, e, 'sd_M1TdMqWtzuVJlUEU');
     }
   }
 
-  async sd_pzVPoiJPeA757PxA(bh, parentSpanInst) {
+  async sd_zCIUMFSZ9fUNtgC8(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_pzVPoiJPeA757PxA',
+      'sd_zCIUMFSZ9fUNtgC8',
       parentSpanInst
     );
     try {
-      if (
-        this.sdService.operators['nnull'](
-          bh.result['payload'],
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = await this.sd_iVhQvH98yclfo8C5(bh, parentSpanInst);
-      }
+      bh.local.allMessages = bh.local.allMessages['payload'];
+      console.log('ASD', bh.local.allMessages);
       this.tracerService.sendData(spanInst, bh);
-
+      bh = await this.setMsgCache(bh, parentSpanInst);
+      //appendnew_next_sd_zCIUMFSZ9fUNtgC8
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_pzVPoiJPeA757PxA',
+        'sd_zCIUMFSZ9fUNtgC8',
         spanInst,
-        'sd_pzVPoiJPeA757PxA'
+        'sd_zCIUMFSZ9fUNtgC8'
       );
     }
   }
 
-  async sd_iVhQvH98yclfo8C5(bh, parentSpanInst) {
+  async setMsgCache(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_iVhQvH98yclfo8C5',
+      'setMsgCache',
       parentSpanInst
     );
     try {
-      bh.local.token = `${bh.result['payload']['token_type']} ${bh.result['payload']['access_token']}`;
-      bh.expiry = bh.result['payload']['expires_in'];
-
-      console.log(bh.local.token);
+      this.systemMessages = bh.local.allMessages;
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_iVhQvH98yclfo8C5
+      bh = await this.sd_vav4MwGkf04v7BT4(bh, parentSpanInst);
+      //appendnew_next_setMsgCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_iVhQvH98yclfo8C5',
+        'sd_P7TZu1cgz6LOCTqH',
         spanInst,
-        'sd_iVhQvH98yclfo8C5'
+        'setMsgCache'
+      );
+    }
+  }
+
+  async sd_vav4MwGkf04v7BT4(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_vav4MwGkf04v7BT4',
+      parentSpanInst
+    );
+    try {
+      let msg = bh.local.allMessages.find(
+        (x) => x.message_code == bh.input.messageCode
+      );
+      bh.local.message = msg[bh.input.localeCode] || msg['en'];
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_sd_vav4MwGkf04v7BT4
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_vav4MwGkf04v7BT4',
+        spanInst,
+        'sd_vav4MwGkf04v7BT4'
       );
     }
   }
@@ -283,5 +355,5 @@ export class flows {
       throw e;
     }
   }
-  //appendnew_flow_flows_Catch
+  //appendnew_flow_system_message_cache_Catch
 }

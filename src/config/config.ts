@@ -7,13 +7,12 @@ export default {
   },
   middlewares: {
     pre: [
-      { __ssdGlobalMiddlewares__: 'sd_G5Id0SF3IYRD9qsu' },
-      { __ssdGlobalMiddlewares__: 'sd_Tp9jNbUvUZ1kJnAn' },
+      { __ssdGlobalMiddlewares__: 'sd_1hGeifY9mjfZlLVV' },
+      { __ssdGlobalMiddlewares__: 'cors' },
     ],
     post: [],
     sequences: {
-      user_auth: { pre: [{ UserAuth: 'ValidateUserSession' }], post: [] },
-      validate_otp: { pre: [{ UserAuth: 'checkOtpVerified' }], post: [] },
+      authorized_apis: { pre: [{ ca_auth: 'otp_check' }], post: [] },
     },
   },
 };

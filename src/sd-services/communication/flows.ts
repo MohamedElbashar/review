@@ -81,28 +81,27 @@ export class flows {
   }
   //   service flows_flows
 
-  async generateToken(parentSpanInst, ...others) {
-    const spanInst = this.tracerService.createSpan(
-      'generateToken',
-      parentSpanInst
-    );
+  async sendSms(parentSpanInst, quote_data: any = undefined, ...others) {
+    const spanInst = this.tracerService.createSpan('sendSms', parentSpanInst);
     let bh: any = {
-      input: {},
+      input: {
+        quote_data,
+      },
       local: {
-        token: '',
+        result: undefined,
       },
     };
     try {
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst);
-      //appendnew_next_generateToken
+      bh = await this.setBodySms(bh, parentSpanInst);
+      //appendnew_next_sendSms
       return (
         // formatting output variables
         {
           input: {},
           local: {
-            token: bh.local.token,
+            result: bh.local.result,
           },
         }
       );
@@ -110,62 +109,61 @@ export class flows {
       return await this.errorHandler(
         bh,
         e,
-        'sd_O3UwLd9cGeMf90DU',
+        'sd_WEYlhEjeU1i1uWK1',
         spanInst,
-        'generateToken'
+        'sendSms'
       );
     }
   }
   //appendnew_flow_flows_start
 
-  async sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst) {
+  async setBodySms(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_Lg3RdEtxSC73l8Dx',
+      'setBodySms',
       parentSpanInst
     );
     try {
-      const querystring = require('querystring');
-
-      bh.url = `${process.env.IDS_PAYMENT_URL}/token`;
-      bh.headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
+      bh.url = process.env.COMMS_MS_URL + 'send-sms';
+      bh.body = {
+        to:
+          bh.input.quote_data?.quote_details?.phone_country_code +
+          bh.input.quote_data?.quote_details?.phone_no,
+        body: 'registration',
+        params: [
+          {
+            code: 'LINK',
+            value:
+              process.env.SMS_UPLOAD_LINK +
+              bh.input.quote_data?.quote_details?.reference_number,
+          },
+        ],
       };
-
-      let body = {
-        client_id: process.env.IDS_PAYMENT_CLIENT,
-        client_secret: process.env.IDS_PAYMENT_SECRET,
-        grant_type: 'client_credentials',
-        rejectUnauthorized: true,
-      };
-
-      bh.payload = querystring.stringify(body);
-
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_egv4fOVHuB7Abc1i(bh, parentSpanInst);
-      //appendnew_next_sd_Lg3RdEtxSC73l8Dx
+      bh = await this.sd_7nW9jvTRJjUCaGOc(bh, parentSpanInst);
+      //appendnew_next_setBodySms
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Lg3RdEtxSC73l8Dx',
+        'sd_9ezLR7RU7X8aP1Rg',
         spanInst,
-        'sd_Lg3RdEtxSC73l8Dx'
+        'setBodySms'
       );
     }
   }
 
-  async sd_egv4fOVHuB7Abc1i(bh, parentSpanInst) {
+  async sd_7nW9jvTRJjUCaGOc(bh, parentSpanInst) {
     try {
       let requestOptions: any = {
         url: bh.url,
         timeout: 30000,
         method: 'post',
-        headers: bh.headers,
+        headers: {},
         followRedirects: true,
         cookies: {},
         authType: undefined,
-        body: bh.payload,
+        body: bh.body,
         paytoqs: false,
         proxyConfig: undefined,
         tlsConfig: undefined,
@@ -199,66 +197,11 @@ export class flows {
         requestOptions.token
       );
 
-      bh.result = responseMsg;
-      bh = await this.sd_pzVPoiJPeA757PxA(bh, parentSpanInst);
-      //appendnew_next_sd_egv4fOVHuB7Abc1i
+      bh.sms_response = responseMsg;
+      //appendnew_next_sd_7nW9jvTRJjUCaGOc
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_egv4fOVHuB7Abc1i');
-    }
-  }
-
-  async sd_pzVPoiJPeA757PxA(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_pzVPoiJPeA757PxA',
-      parentSpanInst
-    );
-    try {
-      if (
-        this.sdService.operators['nnull'](
-          bh.result['payload'],
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = await this.sd_iVhQvH98yclfo8C5(bh, parentSpanInst);
-      }
-      this.tracerService.sendData(spanInst, bh);
-
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_pzVPoiJPeA757PxA',
-        spanInst,
-        'sd_pzVPoiJPeA757PxA'
-      );
-    }
-  }
-
-  async sd_iVhQvH98yclfo8C5(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_iVhQvH98yclfo8C5',
-      parentSpanInst
-    );
-    try {
-      bh.local.token = `${bh.result['payload']['token_type']} ${bh.result['payload']['access_token']}`;
-      bh.expiry = bh.result['payload']['expires_in'];
-
-      console.log(bh.local.token);
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_iVhQvH98yclfo8C5
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_iVhQvH98yclfo8C5',
-        spanInst,
-        'sd_iVhQvH98yclfo8C5'
-      );
+      return await this.errorHandler(bh, e, 'sd_7nW9jvTRJjUCaGOc');
     }
   }
 

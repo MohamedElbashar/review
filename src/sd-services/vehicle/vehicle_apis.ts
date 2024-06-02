@@ -3,11 +3,13 @@ let instance = null;
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
+import * as cookieParser from 'cookie-parser'; //_splitter_
 import { SDBaseService } from '../../services/SDBaseService'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
+import * as SSD_SERVICE_ID_sd_aqK0GNauJL5ThPmv from './flows'; //_splitter_
 //append_imports_end
-export class flows {
+export class vehicle_apis {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -23,7 +25,7 @@ export class flows {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'flows';
+    this.serviceName = 'vehicle_apis';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -38,7 +40,7 @@ export class flows {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new flows(
+      instance = new vehicle_apis(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -67,109 +69,96 @@ export class flows {
   }
 
   async mountTimers() {
-    //appendnew_flow_flows_TimerStart
+    //appendnew_flow_vehicle_apis_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: flows');
-    //appendnew_flow_flows_MiddlewareStart
+    log.debug('mounting all middlewares for service :: vehicle_apis');
+    //appendnew_flow_vehicle_apis_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: flows');
-    //appendnew_flow_flows_HttpIn
-  }
-  //   service flows_flows
+    log.debug('mounting all paths for service :: vehicle_apis');
 
-  async generateToken(parentSpanInst, ...others) {
-    const spanInst = this.tracerService.createSpan(
-      'generateToken',
-      parentSpanInst
-    );
-    let bh: any = {
-      input: {},
-      local: {
-        token: '',
-      },
-    };
-    try {
-      bh = this.sdService.__constructDefault(bh);
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst);
-      //appendnew_next_generateToken
-      return (
-        // formatting output variables
-        {
-          input: {},
-          local: {
-            token: bh.local.token,
-          },
+    this.app['get'](
+      `${this.serviceBasePath}/vehicle/image/:eska_make`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.imageUrl(bh, parentSpanInst);
+          //appendnew_next_sd_bFHCgNma9JojfVVJ
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_bFHCgNma9JojfVVJ');
         }
-      );
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_O3UwLd9cGeMf90DU',
-        spanInst,
-        'generateToken'
-      );
-    }
-  }
-  //appendnew_flow_flows_start
-
-  async sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_Lg3RdEtxSC73l8Dx',
-      parentSpanInst
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
     );
+    //appendnew_flow_vehicle_apis_HttpIn
+  }
+  //   service flows_vehicle_apis
+
+  //appendnew_flow_vehicle_apis_start
+
+  async imageUrl(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan('imageUrl', parentSpanInst);
     try {
-      const querystring = require('querystring');
-
-      bh.url = `${process.env.IDS_PAYMENT_URL}/token`;
-      bh.headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      };
-
-      let body = {
-        client_id: process.env.IDS_PAYMENT_CLIENT,
-        client_secret: process.env.IDS_PAYMENT_SECRET,
-        grant_type: 'client_credentials',
-        rejectUnauthorized: true,
-      };
-
-      bh.payload = querystring.stringify(body);
+      const SSD_SERVICE_ID_sd_aqK0GNauJL5ThPmvInstance: SSD_SERVICE_ID_sd_aqK0GNauJL5ThPmv.flows =
+        SSD_SERVICE_ID_sd_aqK0GNauJL5ThPmv.flows.getInstance();
+      let outputVariables =
+        await SSD_SERVICE_ID_sd_aqK0GNauJL5ThPmvInstance.getMakeImage(
+          spanInst,
+          bh.input.params.eska_make
+        );
+      bh.image_url = outputVariables.local.image_url;
 
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_egv4fOVHuB7Abc1i(bh, parentSpanInst);
-      //appendnew_next_sd_Lg3RdEtxSC73l8Dx
+      bh = await this.strapiHttp(bh, parentSpanInst);
+      //appendnew_next_imageUrl
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Lg3RdEtxSC73l8Dx',
+        'sd_Fqce9lAqAlgl02vV',
         spanInst,
-        'sd_Lg3RdEtxSC73l8Dx'
+        'imageUrl'
       );
     }
   }
 
-  async sd_egv4fOVHuB7Abc1i(bh, parentSpanInst) {
+  async strapiHttp(bh, parentSpanInst) {
     try {
       let requestOptions: any = {
-        url: bh.url,
+        url: bh.image_url,
         timeout: 30000,
-        method: 'post',
-        headers: bh.headers,
+        method: 'get',
+        headers: {},
         followRedirects: true,
         cookies: {},
         authType: undefined,
-        body: bh.payload,
+        body: undefined,
         paytoqs: false,
         proxyConfig: undefined,
         tlsConfig: undefined,
-        ret: 'json',
+        ret: 'arraybuffer',
         params: {},
         username: undefined,
         password: undefined,
@@ -199,66 +188,49 @@ export class flows {
         requestOptions.token
       );
 
-      bh.result = responseMsg;
-      bh = await this.sd_pzVPoiJPeA757PxA(bh, parentSpanInst);
-      //appendnew_next_sd_egv4fOVHuB7Abc1i
+      bh.data = responseMsg;
+      bh = await this.sd_6WPGYNUrEYY94QmP(bh, parentSpanInst);
+      //appendnew_next_strapiHttp
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_egv4fOVHuB7Abc1i');
+      return await this.errorHandler(bh, e, 'sd_bNZksmXZobp8OqJP');
     }
   }
 
-  async sd_pzVPoiJPeA757PxA(bh, parentSpanInst) {
+  async sd_6WPGYNUrEYY94QmP(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_pzVPoiJPeA757PxA',
+      'sd_6WPGYNUrEYY94QmP',
       parentSpanInst
     );
     try {
-      if (
-        this.sdService.operators['nnull'](
-          bh.result['payload'],
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = await this.sd_iVhQvH98yclfo8C5(bh, parentSpanInst);
-      }
+      const { Readable } = require('stream');
+      bh.stream = Readable.from(bh.data?.payload);
+      bh.headers = {
+        'content-type': bh.data?.headers?.['content-type'],
+      };
       this.tracerService.sendData(spanInst, bh);
-
+      await this.sd_5GfWb11o8n5mWc9t(bh, parentSpanInst);
+      //appendnew_next_sd_6WPGYNUrEYY94QmP
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_pzVPoiJPeA757PxA',
+        'sd_6WPGYNUrEYY94QmP',
         spanInst,
-        'sd_pzVPoiJPeA757PxA'
+        'sd_6WPGYNUrEYY94QmP'
       );
     }
   }
 
-  async sd_iVhQvH98yclfo8C5(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_iVhQvH98yclfo8C5',
-      parentSpanInst
-    );
+  async sd_5GfWb11o8n5mWc9t(bh, parentSpanInst) {
     try {
-      bh.local.token = `${bh.result['payload']['token_type']} ${bh.result['payload']['access_token']}`;
-      bh.expiry = bh.result['payload']['expires_in'];
+      bh.web.res.set(bh.headers);
 
-      console.log(bh.local.token);
-      this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_iVhQvH98yclfo8C5
+      bh.stream.pipe(bh.web.res);
       return bh;
     } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_iVhQvH98yclfo8C5',
-        spanInst,
-        'sd_iVhQvH98yclfo8C5'
-      );
+      return await this.errorHandler(bh, e, 'sd_5GfWb11o8n5mWc9t');
     }
   }
 
@@ -283,5 +255,5 @@ export class flows {
       throw e;
     }
   }
-  //appendnew_flow_flows_Catch
+  //appendnew_flow_vehicle_apis_Catch
 }

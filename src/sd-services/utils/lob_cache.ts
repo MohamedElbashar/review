@@ -108,7 +108,7 @@ export class lob_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_BfY2ORcRzqhwm0eF',
+        'sd_tva7wpwhVd3KeeU4',
         spanInst,
         'lobList'
       );
@@ -121,23 +121,23 @@ export class lob_cache {
     try {
       bh.local.lob = this.lob_list;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_bCrXoLaNt7sUDZe8(bh, parentSpanInst);
+      bh = await this.sd_NhNOC4fplvwNnAyf(bh, parentSpanInst);
       //appendnew_next_getCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_gZmPyOKRGUE5ZcYE',
+        'sd_ZBuvhJ6yiJ1zJdPc',
         spanInst,
         'getCache'
       );
     }
   }
 
-  async sd_bCrXoLaNt7sUDZe8(bh, parentSpanInst) {
+  async sd_NhNOC4fplvwNnAyf(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_bCrXoLaNt7sUDZe8',
+      'sd_NhNOC4fplvwNnAyf',
       parentSpanInst
     );
     try {
@@ -167,9 +167,9 @@ export class lob_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_bCrXoLaNt7sUDZe8',
+        'sd_NhNOC4fplvwNnAyf',
         spanInst,
-        'sd_bCrXoLaNt7sUDZe8'
+        'sd_NhNOC4fplvwNnAyf'
       );
     }
   }
@@ -186,7 +186,7 @@ export class lob_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Fd9HqkYCgiOuiQXI',
+        'sd_9DKHiqHAY4Wk7thQ',
         spanInst,
         'setUrl'
       );
@@ -201,7 +201,7 @@ export class lob_cache {
         method: 'post',
         headers: {},
         followRedirects: true,
-        cookies: undefined,
+        cookies: {},
         authType: undefined,
         body: undefined,
         paytoqs: false,
@@ -242,7 +242,7 @@ export class lob_cache {
       //appendnew_next_httpPermissionList
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_txRvQnIMS7EPn6oq');
+      return await this.errorHandler(bh, e, 'sd_Sh9xZkVwHYtsBBF5');
     }
   }
 
@@ -261,7 +261,7 @@ export class lob_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Ih2BWHgZQgaSvlsQ',
+        'sd_BszOyIcFUk8aWKAa',
         spanInst,
         'setResponse0'
       );
@@ -282,7 +282,7 @@ export class lob_cache {
       return await this.errorHandler(
         bh,
         e,
-        'sd_fqJQNXl8J35VkCbc',
+        'sd_HIu6CWnsqXsOUH2T',
         spanInst,
         'setMsgCache'
       );

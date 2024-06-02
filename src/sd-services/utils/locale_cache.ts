@@ -7,7 +7,8 @@ import { SDBaseService } from '../../services/SDBaseService'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 //append_imports_end
-export class flows {
+export class locale_cache {
+  public locales_list: any;
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -23,7 +24,7 @@ export class flows {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'flows';
+    this.serviceName = 'locale_cache';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -38,7 +39,7 @@ export class flows {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new flows(
+      instance = new locale_cache(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -67,42 +68,42 @@ export class flows {
   }
 
   async mountTimers() {
-    //appendnew_flow_flows_TimerStart
+    //appendnew_flow_locale_cache_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: flows');
-    //appendnew_flow_flows_MiddlewareStart
+    log.debug('mounting all middlewares for service :: locale_cache');
+    //appendnew_flow_locale_cache_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: flows');
-    //appendnew_flow_flows_HttpIn
+    log.debug('mounting all paths for service :: locale_cache');
+    //appendnew_flow_locale_cache_HttpIn
   }
-  //   service flows_flows
+  //   service flows_locale_cache
 
-  async generateToken(parentSpanInst, ...others) {
+  async localeList(parentSpanInst, ...others) {
     const spanInst = this.tracerService.createSpan(
-      'generateToken',
+      'localeList',
       parentSpanInst
     );
     let bh: any = {
       input: {},
       local: {
-        token: '',
+        locales: '',
       },
     };
     try {
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst);
-      //appendnew_next_generateToken
+      bh = await this.getCache(bh, parentSpanInst);
+      //appendnew_next_localeList
       return (
         // formatting output variables
         {
           input: {},
           local: {
-            token: bh.local.token,
+            locales: bh.local.locales,
           },
         }
       );
@@ -110,62 +111,102 @@ export class flows {
       return await this.errorHandler(
         bh,
         e,
-        'sd_O3UwLd9cGeMf90DU',
+        'sd_Vh1BfL0gmzlL5OHN',
         spanInst,
-        'generateToken'
+        'localeList'
       );
     }
   }
-  //appendnew_flow_flows_start
+  //appendnew_flow_locale_cache_start
 
-  async sd_Lg3RdEtxSC73l8Dx(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_Lg3RdEtxSC73l8Dx',
-      parentSpanInst
-    );
+  async getCache(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan('getCache', parentSpanInst);
     try {
-      const querystring = require('querystring');
-
-      bh.url = `${process.env.IDS_PAYMENT_URL}/token`;
-      bh.headers = {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      };
-
-      let body = {
-        client_id: process.env.IDS_PAYMENT_CLIENT,
-        client_secret: process.env.IDS_PAYMENT_SECRET,
-        grant_type: 'client_credentials',
-        rejectUnauthorized: true,
-      };
-
-      bh.payload = querystring.stringify(body);
-
+      bh.local.locales = this.locales_list;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_egv4fOVHuB7Abc1i(bh, parentSpanInst);
-      //appendnew_next_sd_Lg3RdEtxSC73l8Dx
+      bh = await this.sd_skN6RCUCDfj55WM8(bh, parentSpanInst);
+      //appendnew_next_getCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_Lg3RdEtxSC73l8Dx',
+        'sd_p84EhybkJy9hppis',
         spanInst,
-        'sd_Lg3RdEtxSC73l8Dx'
+        'getCache'
       );
     }
   }
 
-  async sd_egv4fOVHuB7Abc1i(bh, parentSpanInst) {
+  async sd_skN6RCUCDfj55WM8(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_skN6RCUCDfj55WM8',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['empty'](
+          bh.local.locales,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.setUrl(bh, parentSpanInst);
+      } else if (
+        this.sdService.operators['null'](
+          bh.local.locales,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.setUrl(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_skN6RCUCDfj55WM8',
+        spanInst,
+        'sd_skN6RCUCDfj55WM8'
+      );
+    }
+  }
+
+  async setUrl(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan('setUrl', parentSpanInst);
+    try {
+      bh.url = process.env.DB_API_URL + 'dm/digital/locale/find-all';
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.httpPermissionList(bh, parentSpanInst);
+      //appendnew_next_setUrl
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_RqVnURx96AT3cZ5u',
+        spanInst,
+        'setUrl'
+      );
+    }
+  }
+
+  async httpPermissionList(bh, parentSpanInst) {
     try {
       let requestOptions: any = {
         url: bh.url,
         timeout: 30000,
         method: 'post',
-        headers: bh.headers,
+        headers: {},
         followRedirects: true,
         cookies: {},
         authType: undefined,
-        body: bh.payload,
+        body: undefined,
         paytoqs: false,
         proxyConfig: undefined,
         tlsConfig: undefined,
@@ -199,65 +240,51 @@ export class flows {
         requestOptions.token
       );
 
-      bh.result = responseMsg;
-      bh = await this.sd_pzVPoiJPeA757PxA(bh, parentSpanInst);
-      //appendnew_next_sd_egv4fOVHuB7Abc1i
+      bh.local.locales = responseMsg;
+      bh = await this.sd_9E3CnEZCuYOwJwuK(bh, parentSpanInst);
+      //appendnew_next_httpPermissionList
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_egv4fOVHuB7Abc1i');
+      return await this.errorHandler(bh, e, 'sd_KpMBqCIhjpo9uy6S');
     }
   }
 
-  async sd_pzVPoiJPeA757PxA(bh, parentSpanInst) {
+  async sd_9E3CnEZCuYOwJwuK(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_pzVPoiJPeA757PxA',
+      'sd_9E3CnEZCuYOwJwuK',
       parentSpanInst
     );
     try {
-      if (
-        this.sdService.operators['nnull'](
-          bh.result['payload'],
-          undefined,
-          undefined,
-          undefined
-        )
-      ) {
-        bh = await this.sd_iVhQvH98yclfo8C5(bh, parentSpanInst);
-      }
+      bh.local.locales = bh.local.locales['payload'];
       this.tracerService.sendData(spanInst, bh);
-
+      bh = await this.setCache(bh, parentSpanInst);
+      //appendnew_next_sd_9E3CnEZCuYOwJwuK
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_pzVPoiJPeA757PxA',
+        'sd_9E3CnEZCuYOwJwuK',
         spanInst,
-        'sd_pzVPoiJPeA757PxA'
+        'sd_9E3CnEZCuYOwJwuK'
       );
     }
   }
 
-  async sd_iVhQvH98yclfo8C5(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan(
-      'sd_iVhQvH98yclfo8C5',
-      parentSpanInst
-    );
+  async setCache(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan('setCache', parentSpanInst);
     try {
-      bh.local.token = `${bh.result['payload']['token_type']} ${bh.result['payload']['access_token']}`;
-      bh.expiry = bh.result['payload']['expires_in'];
-
-      console.log(bh.local.token);
+      this.locales_list = bh.local.locales;
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_iVhQvH98yclfo8C5
+      //appendnew_next_setCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_iVhQvH98yclfo8C5',
+        'sd_Vo0GSb79j1wqgIDS',
         spanInst,
-        'sd_iVhQvH98yclfo8C5'
+        'setCache'
       );
     }
   }
@@ -283,5 +310,5 @@ export class flows {
       throw e;
     }
   }
-  //appendnew_flow_flows_Catch
+  //appendnew_flow_locale_cache_Catch
 }
