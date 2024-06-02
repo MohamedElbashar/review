@@ -1,0 +1,28 @@
+{
+    "/auth_code": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apigee_token_cache"
+            ]
+        }
+    },
+    "/auth": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apigee_token_cache"
+            ]
+        }
+    }
+}

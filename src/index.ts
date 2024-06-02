@@ -45,12 +45,7 @@ console.log('process.env.pm_id', process.env.pm_id);
     baseApp.disable('x-powered-by');
 
     // Call midlewares
-    // app.use(helmet());
-    //this to stream image over as response
-    app.use(helmet({
-        crossOriginResourcePolicy: false
-    }));
-
+    app.use(helmet());
 
     app.use(express.json());
     // load global pre middlewares here

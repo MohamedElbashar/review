@@ -1,0 +1,28 @@
+{
+    "/send-otp": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "otp_apis"
+            ]
+        }
+    },
+    "/verify-otp": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "otp_apis"
+            ]
+        }
+    }
+}

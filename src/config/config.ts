@@ -6,13 +6,8 @@ export default {
     logFile: 'logs/console.log',
   },
   middlewares: {
-    pre: [
-      { __ssdGlobalMiddlewares__: 'sd_1hGeifY9mjfZlLVV' },
-      { __ssdGlobalMiddlewares__: 'cors' },
-    ],
+    pre: [{ __ssdGlobalMiddlewares__: 'sd_Tp9jNbUvUZ1kJnAn' }],
     post: [],
-    sequences: {
-      authorized_apis: { pre: [{ ca_auth: 'otp_check' }], post: [] },
-    },
+    sequences: {},
   },
 };
