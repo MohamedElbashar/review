@@ -1,0 +1,29 @@
+{
+    "/customer/renewals": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/policy/renew": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/policy/download": {}
+}

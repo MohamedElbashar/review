@@ -1,0 +1,41 @@
+{
+    "/motor/get-rate": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/quote/calculate-premium": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    },
+    "/apply/coupon": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    }
+}
