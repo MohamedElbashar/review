@@ -2,8 +2,6 @@ import { DataSource, Repository, FindManyOptions } from 'typeorm';
 import { getConnection } from '../../../typeormUtils';
 import { EntityMap } from '../../../services/entity-ref-mapping';
 import { SDBaseService } from '../../../services/SDBaseService';
-import * as oracledb from 'oracledb';
-
 
 export class DmUtils {
     DbConnection: DataSource;
@@ -37,13 +35,7 @@ export class DmUtils {
     async insert(entityId: string, entityObj: any) {
         const currentRepo = this._get_repo(entityId);
         const entityInstance = currentRepo.create(entityObj);
-        const result = await currentRepo.save(entityInstance);
-        Object.keys(result).forEach(key => {
-            if (result[key] && result[key] instanceof oracledb.Lob) {
-                delete result[key]
-            } 
-        });
-        return result
+        return currentRepo.save(entityInstance);
     }
     async updateById(entityId: string, entityObj: any) {
         const currentRepo = this._get_repo(entityId);

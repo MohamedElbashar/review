@@ -98,10 +98,10 @@ export class ping {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_UHZCu8cmrQakXShP(bh, parentSpanInst);
-          //appendnew_next_sd_CZq24XAQnKoVOHei
+          bh = await this.sd_5vh6Sd89ur86oLcr(bh, parentSpanInst);
+          //appendnew_next_sd_fA4ZwLEcrwGe0CpZ
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_CZq24XAQnKoVOHei');
+          return await this.errorHandler(bh, e, 'sd_fA4ZwLEcrwGe0CpZ');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -116,41 +116,41 @@ export class ping {
 
   //appendnew_flow_ping_start
 
-  async sd_UHZCu8cmrQakXShP(bh, parentSpanInst) {
+  async sd_5vh6Sd89ur86oLcr(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_UHZCu8cmrQakXShP',
+      'sd_5vh6Sd89ur86oLcr',
       parentSpanInst
     );
     try {
       const { version: version } = require('../../../package.json');
 
       bh.payload = {
-        STATUS: 'ART DB API IS UP & RUNNING',
+        STATUS: 'DOCUMENT MS IS UP & RUNNING',
         ENV: bh.system.environment.ENV,
         VERSION: version,
       };
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_23E9zyxhYbJWchyM(bh, parentSpanInst);
-      //appendnew_next_sd_UHZCu8cmrQakXShP
+      await this.sd_gUTqStlnBMJAiQCM(bh, parentSpanInst);
+      //appendnew_next_sd_5vh6Sd89ur86oLcr
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_UHZCu8cmrQakXShP',
+        'sd_5vh6Sd89ur86oLcr',
         spanInst,
-        'sd_UHZCu8cmrQakXShP'
+        'sd_5vh6Sd89ur86oLcr'
       );
     }
   }
 
-  async sd_23E9zyxhYbJWchyM(bh, parentSpanInst) {
+  async sd_gUTqStlnBMJAiQCM(bh, parentSpanInst) {
     try {
       bh.web.res.status(200).send(bh.payload);
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_23E9zyxhYbJWchyM');
+      return await this.errorHandler(bh, e, 'sd_gUTqStlnBMJAiQCM');
     }
   }
 
