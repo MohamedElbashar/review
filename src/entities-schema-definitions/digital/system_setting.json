@@ -1,0 +1,132 @@
+{
+    "name": "system_setting",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_gve2te0p73",
+    "y": 1175,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_6b4gr37n1m",
+                "nullable": false,
+                "dbType": "number",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "code": {
+            "name": "code",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_zbkj0jvx2g",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "value": {
+            "name": "value",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_vrlgo3e0il",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "created_date": {
+            "name": "created_date",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "current",
+            "__n__metadata__": {
+                "id": "_Att_x67c6ud7ez",
+                "subCategoryType": "date",
+                "nullable": true,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "updated_date": {
+            "name": "updated_date",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "current",
+            "__n__metadata__": {
+                "id": "_Att_q63jfgk2cd",
+                "subCategoryType": "date",
+                "nullable": true,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "code",
+        "value"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 1280,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create"
+            },
+            {
+                "name": "create-all"
+            },
+            {
+                "name": "delete-all"
+            },
+            {
+                "name": "delete-by-id"
+            },
+            {
+                "name": "find-all"
+            },
+            {
+                "name": "find-by-id"
+            },
+            {
+                "name": "update-all"
+            },
+            {
+                "name": "update-by-id"
+            }
+        ]
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "/dm/digital/risk_item/create": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "risk_item": {
+                                "$ref": "#/definitions/digital ~ risk_item",
+                                "required": []
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/digital ~ risk_item"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "risk_item"
+            ]
+        }
+    }
+}

@@ -1,0 +1,39 @@
+{
+    "/dm/digital/tenant/create-all": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "array",
+                        "properties": {
+                            "tenant": {
+                                "items": {
+                                    "$ref": "#/definitions/digital ~ tenant"
+                                }
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/digital ~ tenant"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "tenant"
+            ]
+        }
+    }
+}

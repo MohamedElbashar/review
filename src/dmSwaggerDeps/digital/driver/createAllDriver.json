@@ -1,0 +1,39 @@
+{
+    "/dm/digital/driver/create-all": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "array",
+                        "properties": {
+                            "driver": {
+                                "items": {
+                                    "$ref": "#/definitions/digital ~ driver"
+                                }
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/digital ~ driver"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "driver"
+            ]
+        }
+    }
+}

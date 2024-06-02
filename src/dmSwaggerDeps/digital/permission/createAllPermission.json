@@ -1,0 +1,39 @@
+{
+    "/dm/digital/permission/create-all": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "array",
+                        "properties": {
+                            "permission": {
+                                "items": {
+                                    "$ref": "#/definitions/digital ~ permission"
+                                }
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/digital ~ permission"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "permission"
+            ]
+        }
+    }
+}

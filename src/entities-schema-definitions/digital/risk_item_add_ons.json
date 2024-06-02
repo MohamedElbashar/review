@@ -1,0 +1,151 @@
+{
+    "name": "risk_item_add_ons",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_s7h3ipai7t",
+    "y": 776,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_8mg84vk0se",
+                "nullable": false,
+                "dbType": "number",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "risk_id": {
+            "name": "risk_id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_68aitoe67d",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "number",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "add_on_code": {
+            "name": "add_on_code",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_4pbnjjw2ur",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "number",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "premium": {
+            "name": "premium",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_hytgd1ky62",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "number",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {},
+                "precision": 10,
+                "scale": 2
+            }
+        },
+        "addl_details": {
+            "name": "addl_details",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "{}",
+            "__n__metadata__": {
+                "id": "_Att_i08sj46yim",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "clob",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "premium_details": {
+            "name": "premium_details",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "{}",
+            "__n__metadata__": {
+                "id": "_Att_2465hgv66b",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "clob",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "risk_id",
+        "add_on_code"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 1280,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create"
+            },
+            {
+                "name": "create-all"
+            },
+            {
+                "name": "delete-all"
+            },
+            {
+                "name": "delete-by-id"
+            },
+            {
+                "name": "find-all"
+            },
+            {
+                "name": "find-by-id"
+            },
+            {
+                "name": "update-all"
+            },
+            {
+                "name": "update-by-id"
+            }
+        ]
+    }
+}

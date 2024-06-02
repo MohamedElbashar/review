@@ -1,0 +1,209 @@
+{
+    "name": "file_metadata",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_g71197q1bw",
+    "y": 10,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_codu7rtllg",
+                "nullable": false,
+                "dbType": "number",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "mime_type": {
+            "name": "mime_type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_vlxn3x0usi",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "filepath": {
+            "name": "filepath",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ctzmvogzb8",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "filename": {
+            "name": "filename",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_dbv37jcqy3",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "quote_id": {
+            "name": "quote_id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_2r25eyqhrr",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "number",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {},
+                "precision": 10,
+                "scale": 0
+            }
+        },
+        "risk_id": {
+            "name": "risk_id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_lceoz3ba9x",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "number",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {},
+                "precision": 10,
+                "scale": 0
+            }
+        },
+        "doc_type_id": {
+            "name": "doc_type_id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_u833y8zri8",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "number",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {},
+                "precision": 10,
+                "scale": 0
+            }
+        },
+        "doc_sub_type_id": {
+            "name": "doc_sub_type_id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_9p7knla3q2",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "number",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {},
+                "precision": 10,
+                "scale": 0
+            }
+        },
+        "created_date": {
+            "name": "created_date",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "current",
+            "__n__metadata__": {
+                "id": "_Att_od6vu2ijx3",
+                "subCategoryType": "date",
+                "nullable": true,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "mime_type",
+        "filepath",
+        "filename"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 1700,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "create"
+            },
+            {
+                "name": "create-all"
+            },
+            {
+                "name": "delete-all"
+            },
+            {
+                "name": "delete-by-id"
+            },
+            {
+                "name": "find-all"
+            },
+            {
+                "name": "find-by-id"
+            },
+            {
+                "name": "update-all"
+            },
+            {
+                "name": "update-by-id"
+            }
+        ]
+    }
+}

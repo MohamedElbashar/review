@@ -1,0 +1,38 @@
+{
+    "/dm/digital/system_setting/create": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "object",
+                        "properties": {
+                            "system_setting": {
+                                "$ref": "#/definitions/digital ~ system_setting",
+                                "required": []
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/digital ~ system_setting"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "system_setting"
+            ]
+        }
+    }
+}

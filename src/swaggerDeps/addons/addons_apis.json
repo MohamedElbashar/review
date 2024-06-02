@@ -1,0 +1,28 @@
+{
+    "/addons/list-by-quote": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addons_apis"
+            ]
+        }
+    },
+    "/addon-risk": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "addons_apis"
+            ]
+        }
+    }
+}

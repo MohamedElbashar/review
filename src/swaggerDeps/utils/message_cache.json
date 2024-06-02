@@ -1,0 +1,15 @@
+{
+    "/utils/system-messages": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "message_cache"
+            ]
+        }
+    }
+}

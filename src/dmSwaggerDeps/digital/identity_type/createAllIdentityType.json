@@ -1,0 +1,39 @@
+{
+    "/dm/digital/identity_type/create-all": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "type": "array",
+                        "properties": {
+                            "identity_type": {
+                                "items": {
+                                    "$ref": "#/definitions/digital ~ identity_type"
+                                }
+                            }
+                        },
+                        "required": []
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/digital ~ identity_type"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "identity_type"
+            ]
+        }
+    }
+}

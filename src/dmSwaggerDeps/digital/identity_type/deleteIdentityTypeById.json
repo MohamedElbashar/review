@@ -1,0 +1,46 @@
+{
+    "/dm/digital/identity_type/delete-by-id": {
+        "post": {
+            "consumes": [],
+            "produces": [],
+            "parameters": [
+                {
+                    "in": "body",
+                    "name": "body",
+                    "schema": {
+                        "properties": {
+                            "filter": {
+                                "type": "object",
+                                "properties": {
+                                    "id": {
+                                        "type": "number"
+                                    }
+                                },
+                                "required": [
+                                    "id"
+                                ]
+                            }
+                        },
+                        "required": [
+                            "filter"
+                        ]
+                    }
+                }
+            ],
+            "responses": {
+                "200": {
+                    "schema": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/definitions/digital ~ identity_type"
+                        }
+                    },
+                    "description": ""
+                }
+            },
+            "tags": [
+                "identity_type"
+            ]
+        }
+    }
+}

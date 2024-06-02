@@ -1,0 +1,54 @@
+{
+    "/policy/list2": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "policy_apis"
+            ]
+        }
+    },
+    "/policy/team-policy": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "policy_apis"
+            ]
+        }
+    },
+    "/policy/list": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "policy_apis"
+            ]
+        }
+    },
+    "/policy/filter_options": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "policy_apis"
+            ]
+        }
+    }
+}

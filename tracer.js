@@ -22,7 +22,7 @@ const provider = new NodeTracerProvider({
 });
 
 // const exporter = new ConsoleSpanExporter();
-// const processor = new SimpleSpanProcessor(exporter);
+// const processor = new SimpleSpanProcessor();
 // provider.addSpanProcessor(processor);
 
 const collectorTraceExporter = new OTLPTraceExporter({

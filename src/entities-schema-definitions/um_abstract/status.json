@@ -1,0 +1,32 @@
+{
+    "name": "status",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_yi644inpik",
+    "y": 10,
+    "properties": {
+        "status": {
+            "name": "status",
+            "format": "",
+            "type": "boolean",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_zoz1a07mt8",
+                "nullable": false,
+                "constraints": {}
+            }
+        }
+    },
+    "required": [],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 20,
+    "userList": {
+        "SSD_SERVICE_ID_sd_uTNSjLLMIkjdlDl3": [
+            "sd_FX9JJGKbgyp1Ul3I"
+        ]
+    }
+}

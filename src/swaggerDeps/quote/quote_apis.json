@@ -1,0 +1,107 @@
+{
+    "/quote/team_quotes": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/list": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/filter_options": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/update-premium": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/summary": {},
+    "/quote/customer/decision": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/customer/comment": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/batch-update": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    },
+    "/quote/create-ref-no": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "quote_apis"
+            ]
+        }
+    }
+}
