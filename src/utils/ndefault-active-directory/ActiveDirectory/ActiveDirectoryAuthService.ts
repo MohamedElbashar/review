@@ -1,5 +1,5 @@
 'use strict';
-import * as ActiveDirectory from 'activedirectory2';
+import * as ActiveDirectory from 'activedirectory';
 import { StatusCodes as HttpStatus } from 'http-status-codes';
 
 export class ActiveDirectoryAuthService {
@@ -171,9 +171,9 @@ export class ActiveDirectoryAuthService {
             const adInstance = new ActiveDirectory(activeDirectoryConfig);
             adInstance.findUsers(query, (err, results) => {
                 if (err) {
-                    console.log(err)
                     return reject(err);
                 }
+
                 return resolve(this.getUsers(results));
             });
         });

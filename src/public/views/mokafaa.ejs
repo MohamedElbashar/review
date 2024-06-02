@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <link href="<%= base_path %>/static/style.css" type="application/javascript" rel="stylesheet">
+    <script src="<%= base_path %>/static/js/mokafaa.js" type='application/javascript'></script>
+    <title>AL Rajhi Takaful for Islamic Insurance Services | AL Rajhi Takaful KSA</title>
+    <link rel="icon" type="image/x-icon" href="<%= base_path %>/static/favicon.ico">
+    <style>
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9999;
+            overflow-y: auto;
+        }
+
+        .popup-content {
+            background-color: #fefefe;
+            font-family: Poppins;
+            margin: 10% auto;
+            /* padding: 20px; */
+            border-radius: 5px;
+            width: 69.73%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 24px;
+            font-weight: 400;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .title-div {
+            border-bottom: 1px solid #F3F7FD;
+            justify-items: space-between;
+            padding: 16px 20px 16px 20px;
+            /* //border-color: #F3F7FD; */
+
+        }
+
+        .title-label {
+            font-family: Poppins;
+            font-size: 18px;
+            font-weight: 500;
+            line-height: 27px;
+            letter-spacing: 0em;
+            text-align: left;
+            color: #27313F;
+        }
+
+        .header {
+            font-family: Poppins;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 40px;
+            letter-spacing: 0.25px;
+            text-align: center;
+            color: #475973;
+
+        }
+
+        .padding-16-24 {
+            padding: 16px 24px 16px 24px;
+        }
+
+        .padding-16-0 {
+            padding: 16px 0px;
+        }
+
+        .mt-10 {
+            margin-top: 10px;
+        }
+
+        .mt-16 {
+            margin-top: 16px;
+        }
+
+        .ml-16 {
+            margin-left: 16px;
+        }
+
+        .ml-10 {
+            margin-left: 10px;
+        }
+
+
+        .mb-10 {
+            margin-bottom: 10px;
+        }
+
+        .font-weight-400 {
+            font-weight: 400;
+        }
+
+        .font-weight-500 {
+            font-weight: 500;
+        }
+
+        .font-weight-600 {
+            font-weight: 600;
+        }
+
+        .font-weight-700 {
+            font-weight: 700;
+        }
+
+        .line-height-30 {
+            line-height: 30px;
+        }
+
+        .neutral-dark-300 {
+            color: #8490A1;
+        }
+
+        .neutral-dark-500 {
+            color: #475973;
+        }
+
+        .primary-color-500 {
+            color: #228BC4;
+        }
+
+        .teal-500 {
+            color: #00AEAA;
+
+        }
+
+        .font-size-18 {
+            font-size: 18px;
+        }
+
+        .font-size-20 {
+            font-size: 20px;
+        }
+
+        .width-18 {
+            width: 18%;
+        }
+
+        .button-div {
+            Padding: 16px 24px 20px 24px;
+            gap: 16px;
+        }
+
+
+        /* Primary Button */
+        .primary-button {
+            width: 20%;
+            height: 44px;
+            background-color: #228BC4;
+            color: white;
+            font-weight: 600;
+            padding: 4px 20px 4px 20px;
+            border-radius: 24px;
+            border: none;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Secondary Button */
+        .secondary-button {
+            width: 20%;
+            height: 44px;
+            background-color: #FFFFFF;
+            border: 1px solid #AAC3EE;
+            font-weight: 600;
+            padding: 4px 20px 4px 20px;
+            border-radius: 24px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .edit-option {
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        input[type="text"] {
+            padding: 12px 16px;
+            border-radius: 4px;
+            border: 1px solid #C6CCD4;
+            border-radius: 5px;
+            font-size: 16px;
+            line-height: 22.5px;
+            text-align: center;
+        }
+
+        .country-code-input {
+            width: 40px;
+        }
+
+        .otp-input {
+            width: 44px;
+            height: 44px;
+        }
+
+
+        .input-container {
+            position: relative;
+            margin: 20px auto;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .input-container input[type="text"] {
+            padding: 10px 10px 10px 50px;
+            border: 1px solid #C6CCD4;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 130px;
+        }
+
+        .input-container input[type="text"]:focus {
+            outline: none;
+        }
+
+        .prefix {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            padding: 10px;
+            color: #8490A1;
+            pointer-events: none;
+            border-right: 1px solid #C6CCD4;
+            /* Ensure that the prefix doesn't interfere with input */
+        }
+
+        .error-text {
+            color: #DE0303;
+        }
+
+        @media only screen and (max-width: 768px) {
+            .font-size-18 {
+                font-size: 14px;
+            }
+
+            .font-size-20 {
+                font-size: 16px;
+            }
+
+            .header {
+                font-size: 18px;
+            }
+
+            .padding-16-24 {
+                padding: 0px;
+            }
+
+            .mt-16 {
+                margin-top: 4px;
+            }
+
+
+            .primary-button {
+                width: 100%;
+                margin-left: 0 !important;
+                margin-top: 10px;
+
+            }
+
+            /* Secondary Button */
+            .secondary-button {
+                width: 100%;
+
+            }
+
+            .w-50 {
+                width: 50%;
+            }
+
+            .otp-input {
+                width: 24px;
+                height: 24px;
+            }
+
+            .input-container input[type="text"] {
+                width: 50%;
+            }
+
+            .prefix {
+                position: absolute;
+                left: 0%;
+            }
+
+
+        }
+
+        @media screen and (min-width: 768px) and (max-width: 1024px) {
+
+            /* CSS styles for medium-sized screens */
+            .prefix {
+                left: 8%;
+            }
+        }
+
+        .error_msg {
+            color: #DE0303;
+            font-family: Poppins;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: 20px;
+            letter-spacing: 0.25px;
+        }
+
+        .page-loader {
+            display: flex !important;
+            align-items: center;
+            justify-content: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Gray color with opacity */
+            z-index: 9999;
+            /* Ensure it's on top of other content */
+        }
+
+        /* Styles for the loader */
+        .loader {
+            border: 4px solid #f3f3f3;
+            /* Gray border */
+            border-top: 4px solid #A9A9A9;
+            /* Blue border for animation */
+            border-radius: 50%;
+            width: 20px;
+            /* Small size */
+            height: 20px;
+            /* Small size */
+            animation: spin 1s linear infinite;
+            /* Animation for spinning */
+            margin: auto;
+            /* Adjust the top margin */
+        }
+
+        /* Animation keyframes for spinning */
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div id="popup" class="popup">
+        <!-- Page loader -->
+        <div class="page-loader" id="show_loader">
+            <div class="loader"></div>
+        </div>
+        <div class="popup-content" id="mokfaa_payment" data-auth-mobile='<%= JSON.stringify(dataObj) %>'>
+            <div class="title-div">
+                <span class="title-label">
+                    Confirm
+                </span>
+                <% if (activity_type !='success') { %>
+                    <span class="close" id="closePopup">&times;</span>
+                <% } %>
+            </div>
+            <!-- first screen get auth_mobile -->
+            <% if (activity_type==='auth_mobile' ) { %>
+                <div class="main-content text-center">
+                    <div class="header padding-16-24">
+                        Mokafaa Points Redeem
+                    </div>
+                    <div class="padding-16-24">
+                        <div class="neutral-dark-300 font-weight-500 font-size-18">
+                            Please make sure your number is the same number that linked to your AL Rajhi Bank account:
+                        </div>
+                        <div class="neutral-dark-300 font-weight-500 font-size-18 mt-10" id="show_mobile_no">
+                            <span id="quote_mob">+<%= mobile_no_cc %> <%= mobile_no %></span>
+                            <a class="font-size-20 font-weight-600 line-height-30 edit-option primary-color-500 ml-10"
+                                id="edit"> Edit </a>
+                        </div>
+
+                        <div class="edit-input mt-16" id="edit_input">
+                            <div class="neutral-dark-300 font-weight-500 font-size-18">
+                                Please add your same number that linked to your Al Rajhi Bank account:
+                            </div>
+                            <div class="mt-16">
+                                <input type="text" maxlength="4" class="country-code-input" id="edit_country_code"
+                                    value="<%= mobile_no_cc %>" readonly />
+                                <input type="text" maxlength="9" class="w-50" id="edit_mobile_no" />
+                            </div>
+                        </div>
+                        <div id="error_msg" class="error_msg">
+                            <%= errorMessage %>
+                        </div>
+                    </div>
+                    <div class="button-div">
+                        <button class="secondary-button primary-color-500" id="auth_mobile_cancel">Cancel</button>
+                        <button class="primary-button ml-16" id="auth_mobile_submit">Confirm</button>
+                    </div>
+                </div>
+                <% } %>
+                    <!-- second screen -->
+                    <% if (activity_type==='enter_otp' ) { %>
+                        <div class="main-content text-center">
+                            <div class="header padding-16-24">
+                                Mokafaa Points Redeem
+                            </div>
+                            <div>
+                                <div class="neutral-dark-500 font-weight-500 font-size-18">
+                                    Please Enter The One Time Password
+                                </div>
+                                <div class="neutral-dark-300 font-weight-500 font-size-18 mt-16">
+                                    One time password has been send to your mobile number
+                                </div>
+                                <div class="neutral-dark-300 font-weight-500 font-size-18 mt-16">
+                                    <span>+<%= mobile_no_cc %> <%= redemption_phone_no || mobile_no %></span>
+                                </div>
+
+                                <div class="edit-input mt-16">
+                                    <div id="otp_val">
+                                        <input type="text" maxlength="1" class="otp-input" id="otp_1" placeholder="-" />
+                                        <input type="text" maxlength="1" class="otp-input" id="otp_2" placeholder="-" />
+                                        <input type="text" maxlength="1" class="otp-input" id="otp_3" placeholder="-" />
+                                        <input type="text" maxlength="1" class="otp-input" id="otp_4" placeholder="-" />
+
+                                    </div>
+                                    <div class="mt-10">
+                                        <a href=""
+                                            class="font-size-20 font-weight-600 line-height-30 edit-option primary-color-500" id="resent_otp">
+                                            Resend OTP
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="neutral-dark-300 font-weight-500 font-size-18 mt-16 mb-10">
+                                    Please add the amount that you need for your Mokafaa Points:
+                                </div>
+                                <div class="input-container">
+                                    <span class="prefix">SAR</span>
+                                    <input type="text" placeholder="XXXXXX" value="<%= outstanding_amount || amount %>" id="mokafaa_req_amt">
+                                </div>
+
+                                <div id="error_msg_1" class="error_msg">
+                                    <%= errorMessage %>
+                                </div>
+
+                            </div>
+                            <div class="button-div">
+
+                                <button class="secondary-button primary-color-500"
+                                    id="auth_mobile_cancel">Cancel</button>
+
+                                <button class="primary-button ml-16" id="enter_otp_submit">Confirm</button>
+                            </div>
+                        </div>
+                        <% } %>
+                            <!-- third screen -->
+                            <% if (activity_type==='reverse' ) { %>
+                                <div class="main-content text-center">
+                                    <div class="header padding-16-24 error-text">
+                                        Reverse Mokofaa points redeem
+                                    </div>
+                                    <div class="padding-16-24">
+                                        <div class="neutral-dark-300 font-weight-500 font-size-18">
+                                            Are you sure to cancel the process?
+                                        </div>
+
+
+                                    </div>
+                                    <div class="button-div">
+                                        <button class="secondary-button primary-color-500" id="auth_mobile_cancel">Cancel</button>
+                                        <button class="primary-button ml-16" id="mokafaa_reverse_confirm">Reverse</button>
+                                    </div>
+                                </div>
+                                <% } %>
+                                    <!--fourth screen-->
+                                    <% if (activity_type==='success' ) { %>
+                                        <div class="main-content text-center">
+                                            <div class="header padding-16-24">
+                                                Mokafaa Points Redeem
+                                            </div>
+                                            <div class="padding-16-24">
+                                                <img src="<%= image_path %>">
+                                                <div class="teal-500 font-weight-700 font-size-20">
+                                                    Confirmation on your request!
+                                                </div>
+                                                <div class="neutral-dark-300 font-weight-500 font-size-18">
+                                                    Your Mokafaa Points has been used up/added
+                                                </div>
+
+                                            </div>
+                                            <div class="button-div">
+                                                <button class="primary-button primary-color-500" id="confirm_reedem">Confirm</button>
+                                                <button class="secondary-button ml-16" id="reverse_points">Reverse</button>
+                                            </div>
+                                        </div>
+                                        <% } %>
+
+                                    <!--fourth screen-->
+                                    <% if (activity_type==='failure' ) { %>
+                                        <div class="main-content text-center">
+                                            <div class="header padding-16-24">
+                                                Mokafaa Points Redeem
+                                            </div>
+                                            <div class="padding-16-24">
+                                                <div class="teal-500 font-weight-700 font-size-20">
+                                                    Confirmation on your request!
+                                                </div>
+                                                <div class="neutral-dark-300 font-weight-500 font-size-18">
+                                                    Your Mokafaa Points has been failed to redeem. Please try later
+                                                </div>
+
+                                            </div>
+                                            <div class="button-div">
+                                                <button class="secondary-button primary-color-500" id="auth_mobile_cancel">Cancel</button>
+                                                <button class="primary-button ml-16" id="reverse_points">Reverse</button>
+                                            </div>
+                                        </div>
+                                        <% } %>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+{
+    "/v1/paymentRedirection": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "hyper_pay_apis"
+            ]
+        }
+    },
+    "/v1/hyperpayCallback": {},
+    "/v1/checkStatus/:id/:source_id": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "hyper_pay_apis"
+            ]
+        }
+    },
+    "/v1/payment_status": {
+        "get": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "hyper_pay_apis"
+            ]
+        }
+    }
+}

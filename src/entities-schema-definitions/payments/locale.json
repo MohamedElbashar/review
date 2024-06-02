@@ -1,0 +1,79 @@
+{
+    "name": "locale",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_58u89y11jc",
+    "y": 693.6015625,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_h5zz96h0yh",
+                "nullable": false,
+                "dbType": "number",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "en": {
+            "name": "en",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_6ecp7b0kcq",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "ar": {
+            "name": "ar",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_r7zf6r21tx",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "en"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": true,
+    "x": 42,
+    "__n__metadata__": {
+        "operations": [
+            {
+                "name": "find-all"
+            },
+            {
+                "name": "find-by-id"
+            }
+        ]
+    }
+}

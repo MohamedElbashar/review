@@ -1,0 +1,41 @@
+{
+    "/arb-mokafaa/authorize-blu-customer": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "flows"
+            ]
+        }
+    },
+    "/arb-mokafaa/otp-validation": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "flows"
+            ]
+        }
+    },
+    "/arb-mokafaa/reverse-transaction": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "flows"
+            ]
+        }
+    }
+}

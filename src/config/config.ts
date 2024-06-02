@@ -8,6 +8,15 @@ export default {
   middlewares: {
     pre: [{ __ssdGlobalMiddlewares__: 'sd_Tp9jNbUvUZ1kJnAn' }],
     post: [],
-    sequences: {},
+    sequences: {
+      serviceAccAuthorizedAPIs: {
+        pre: [{ middleware_flow: 'authorize' }],
+        post: [],
+      },
+      serviceAccAuthSadad: {
+        pre: [{ middleware_flow: 'sadad_authorize' }],
+        post: [],
+      },
+    },
   },
 };

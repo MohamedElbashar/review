@@ -1,0 +1,119 @@
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <meta http-equiv="Content-Security-Policy"
+        content="script-src 'self' <%=gateway_baseURL %> 'unsafe-inline'"> -->
+    <title>AL Rajhi Takaful for Islamic Insurance Services | AL Rajhi Takaful KSA</title>
+    <link rel="icon" type="image/x-icon" href="<%= base_path %>/static/favicon.ico">
+    <script src="<%= base_path %>/static/js/payment.js" type="text/javascript"> </script>
+</head>
+<style>
+    .wpwl-wrapper-brand {
+        visibility: hidden;
+    }
+
+    .wpwl-label-brand {
+        visibility: hidden;
+    }
+
+    .wpwl-container {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 10px;
+        width: 80%;
+
+    }
+
+    body {
+        background-color: #f6f6f5;
+    }
+
+    .apple-pay-layout {
+        /* Custom styles for the container */
+        display: block;
+        background-color: #f6f6f5;
+        width: 100%;
+        height: 100%;
+    }
+
+    .apple-pay-layout .apple-pay-button {
+        background-color: #000;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+    }
+
+    @supports (-webkit-appearance: -apple-pay-button) {
+    .wpwl-apple-pay-button-white-with-line {
+        -apple-pay-button-style: black; /* Incorrect property */
+        -apple-pay-button-type: buy; /* Correct property for setting the button type */
+        width: 60%;
+    }
+
+    .wpwl-group-button {
+        text-align: center;
+    }
+
+    .apple_pay_text {
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        text-align: center;
+    }
+
+    @media only screen and (max-width: 767px) {
+        .apple_pay_text {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    }
+}
+</style>
+
+<script>
+    var wpwlOptions = {
+        locale: '<%= locale %>',
+        applePay: {
+            // Possible values: 1-14.
+            version: 3,
+
+            // Default is css.
+            // Possible values: css, js.
+            buttonSource: 'js',
+
+            // Default is white-outline.
+            // Possible values: white-outline, white, black.
+            buttonStyle: 'black',
+
+            // Possible values: add-money, book, buy, check-out, continue, contribute, donate,
+            //     order, pay, plain, reload, rent, subscribe, support, tip, top-up.
+            buttonType: 'buy',
+
+            // Store name. Displayed in the Touch Bar on supported models of MacBook Pro.
+            displayName: 'Alrajhitakaful',
+          },
+    }
+</script>
+
+<script src="<%=gateway_baseURL %>/v1/paymentWidgets.js?checkoutId=<%=checkout_id %>"> </script>
+<!-- <form action="<%=callback_url %>" class="paymentWidgets" data-brands="<%=payment_method %>"></form> -->
+
+
+<div class="apple-pay-layout">
+    <% if(payment_method == 'APPLEPAY') { %>
+    <div class="apple_pay_text">
+        <h3><%= apple_pay_title_1 || '' %></h3>
+        <h3><%= apple_pay_title_2 %></h2>
+    </div>
+    <% } %>
+    <form action="<%=callback_url %>" class="paymentWidgets" data-brands="<%=payment_method %>">
+    </form>
+</div>

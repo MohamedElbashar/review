@@ -98,10 +98,10 @@ export class ping {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_KjTLwJizoQmP5YaM(bh, parentSpanInst);
-          //appendnew_next_sd_FpiDG9y22ljUwY9R
+          bh = await this.sd_KPko2eppTS05xvlX(bh, parentSpanInst);
+          //appendnew_next_sd_2S55DMJUQao8kH0I
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_FpiDG9y22ljUwY9R');
+          return await this.errorHandler(bh, e, 'sd_2S55DMJUQao8kH0I');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -116,41 +116,41 @@ export class ping {
 
   //appendnew_flow_ping_start
 
-  async sd_KjTLwJizoQmP5YaM(bh, parentSpanInst) {
+  async sd_KPko2eppTS05xvlX(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_KjTLwJizoQmP5YaM',
+      'sd_KPko2eppTS05xvlX',
       parentSpanInst
     );
     try {
       const { version: version } = require('../../../package.json');
 
       bh.payload = {
-        STATUS: 'ART INTEGRATION API IS UP & RUNNING',
+        STATUS: 'PAYMENT MS SSD IS UP & RUNNING',
         ENV: bh.system.environment.ENV,
         VERSION: version,
       };
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_17Ky5X9c0Hl1okR5(bh, parentSpanInst);
-      //appendnew_next_sd_KjTLwJizoQmP5YaM
+      await this.sd_RT79GKcQfQKHB56K(bh, parentSpanInst);
+      //appendnew_next_sd_KPko2eppTS05xvlX
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_KjTLwJizoQmP5YaM',
+        'sd_KPko2eppTS05xvlX',
         spanInst,
-        'sd_KjTLwJizoQmP5YaM'
+        'sd_KPko2eppTS05xvlX'
       );
     }
   }
 
-  async sd_17Ky5X9c0Hl1okR5(bh, parentSpanInst) {
+  async sd_RT79GKcQfQKHB56K(bh, parentSpanInst) {
     try {
       bh.web.res.status(200).send(bh.payload);
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_17Ky5X9c0Hl1okR5');
+      return await this.errorHandler(bh, e, 'sd_RT79GKcQfQKHB56K');
     }
   }
 

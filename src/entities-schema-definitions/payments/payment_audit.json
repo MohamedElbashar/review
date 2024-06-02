@@ -1,0 +1,228 @@
+{
+    "name": "payment_audit",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "description": "",
+    "type": "object",
+    "id": "_EN_z81tf2fzmv",
+    "y": 10,
+    "properties": {
+        "id": {
+            "name": "id",
+            "format": "",
+            "type": "number",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_rm6j94e9tw",
+                "nullable": false,
+                "dbType": "number",
+                "primary": true,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {
+                    "primaryGenerated": true
+                }
+            }
+        },
+        "source_id_no": {
+            "name": "source_id_no",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_ku71ijpch9",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "api_name": {
+            "name": "api_name",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_1oi5b8nif8",
+                "subCategoryType": null,
+                "nullable": false,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "device_type": {
+            "name": "device_type",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_xcl80wwv5s",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "ip_address": {
+            "name": "ip_address",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_jgc2mn3uul",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "request": {
+            "name": "request",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "{}",
+            "__n__metadata__": {
+                "id": "_Att_yr3lg7iufn",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "clob",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "response": {
+            "name": "response",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "{}",
+            "__n__metadata__": {
+                "id": "_Att_xw851ssclz",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "clob",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "request_time": {
+            "name": "request_time",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "current",
+            "__n__metadata__": {
+                "id": "_Att_qvhzke388m",
+                "subCategoryType": "date",
+                "nullable": true,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "response_time": {
+            "name": "response_time",
+            "format": "date-time",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_djufqexho0",
+                "subCategoryType": "date",
+                "nullable": true,
+                "dbType": "timestamp with time zone",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "response_code": {
+            "name": "response_code",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_82sxutkq2z",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "error_message": {
+            "name": "error_message",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "",
+            "__n__metadata__": {
+                "id": "_Att_2rn1pdufp8",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "varchar2",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        },
+        "addl_details": {
+            "name": "addl_details",
+            "format": "",
+            "type": "string",
+            "description": "",
+            "default": "{}",
+            "__n__metadata__": {
+                "id": "_Att_106l5yrcwa",
+                "subCategoryType": null,
+                "nullable": true,
+                "dbType": "clob",
+                "primary": false,
+                "placeholder": "",
+                "dbColName": "",
+                "constraints": {}
+            }
+        }
+    },
+    "required": [
+        "source_id_no",
+        "api_name"
+    ],
+    "value": "",
+    "__attributeExpansion__": true,
+    "__operationExpansion__": false,
+    "x": 860,
+    "userList": {
+        "SSD_SERVICE_ID_sd_8WmGT1Gp9T1KKnel": [
+            "sd_j8JYcSmG4AsdqdOx"
+        ]
+    }
+}

@@ -24,6 +24,8 @@ import { UserRoutes } from './routes';
 import { DmRoutes } from './dm-routes';
 import { StartScripts } from './ServerStartScripts';
 import { SchemaBuilder } from './utils/schema-builder';
+import * as cors from 'cors';
+import { createProxyMiddleware } from 'http-proxy-middleware';
 
 //////////////////////////////////////////////////////////
 console.log('process.env.NODE_APP_INSTANCE', process.env.NODE_APP_INSTANCE);
@@ -32,6 +34,7 @@ console.log('process.env.pm_id', process.env.pm_id);
 (async () => {
     const apiDocsPath = process.env.API_DOCS_PATH || '/api-docs';
     const contextPath = process.env.SSD_BASE_PATH || '/api';
+    const apple_provider = '/.well-known'
     const port = process.env.SSD_DEFAULT_PORT || 8081;
     const globalTimers = [];
     const generatedMiddlewares: any = {};
@@ -46,10 +49,29 @@ console.log('process.env.pm_id', process.env.pm_id);
 
     // Call midlewares
     app.use(helmet());
-    app.use(express.json({ limit: '100mb'}));
-    // app.use(express.urlencoded({ extended: true, limit: '100mb'}));
+
+    app.use(cors())
+
+    app.set('base2', apple_provider)
+    //set static files serving
+    app.use(`${process.env.SSD_BASE_PATH}/static`, express.static(path.join(__dirname, 'public')));
+    app.use(`/.well-known`, express.static(path.join(__dirname,'..','src','apple-hyperpay-config')));
+    console.log("dirname",path.join(__dirname,'..','src','apple-hyperpay-config'));
+    app.get(`${apple_provider}/`, (req, res) => {
+        res.send('Route 1 under base path 1');
+    });
+    app.use(express.json());
+
+    let debug_apple = ((req, res, next) => {
+        console.log("debug apple pay ", req);
+        log.info(`debug apple pay: ${req}`);
+        next();
+    });
+
+    app.use(debug_apple);
     // load global pre middlewares here
     app.set('base', contextPath);
+    
     /****************************
      * Load server start scripts
      ****************************/
@@ -125,6 +147,7 @@ console.log('process.env.pm_id', process.env.pm_id);
 
     log.info(`Server context path: ${contextPath}`);
     log.info(`Server API docs path: ${apiDocsPath}`);
+    log.info(`Server Apple provider path: ${apple_provider}`);
     log.info(`Server is up and running on port: ${port}`);
 })().catch(log.error);
 
