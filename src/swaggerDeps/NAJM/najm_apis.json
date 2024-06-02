@@ -1,0 +1,15 @@
+{
+    "/najm/ncd": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "najm_apis"
+            ]
+        }
+    }
+}

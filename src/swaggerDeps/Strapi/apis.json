@@ -1,0 +1,15 @@
+{
+    "/strapi/vehicle-image/:eska_make": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "apis"
+            ]
+        }
+    }
+}

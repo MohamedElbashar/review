@@ -98,10 +98,10 @@ export class ping {
             next
           );
           let parentSpanInst = null;
-          bh = await this.sd_5vh6Sd89ur86oLcr(bh, parentSpanInst);
-          //appendnew_next_sd_fA4ZwLEcrwGe0CpZ
+          bh = await this.sd_KjTLwJizoQmP5YaM(bh, parentSpanInst);
+          //appendnew_next_sd_FpiDG9y22ljUwY9R
         } catch (e) {
-          return await this.errorHandler(bh, e, 'sd_fA4ZwLEcrwGe0CpZ');
+          return await this.errorHandler(bh, e, 'sd_FpiDG9y22ljUwY9R');
         }
       },
       this.sdService.getMiddlesWaresBySequenceId(
@@ -116,41 +116,41 @@ export class ping {
 
   //appendnew_flow_ping_start
 
-  async sd_5vh6Sd89ur86oLcr(bh, parentSpanInst) {
+  async sd_KjTLwJizoQmP5YaM(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_5vh6Sd89ur86oLcr',
+      'sd_KjTLwJizoQmP5YaM',
       parentSpanInst
     );
     try {
       const { version: version } = require('../../../package.json');
 
       bh.payload = {
-        STATUS: 'DOCUMENT MS IS UP & RUNNING',
+        STATUS: 'ART INTEGRATION API IS UP & RUNNING',
         ENV: bh.system.environment.ENV,
         VERSION: version,
       };
       this.tracerService.sendData(spanInst, bh);
-      await this.sd_gUTqStlnBMJAiQCM(bh, parentSpanInst);
-      //appendnew_next_sd_5vh6Sd89ur86oLcr
+      await this.sd_17Ky5X9c0Hl1okR5(bh, parentSpanInst);
+      //appendnew_next_sd_KjTLwJizoQmP5YaM
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_5vh6Sd89ur86oLcr',
+        'sd_KjTLwJizoQmP5YaM',
         spanInst,
-        'sd_5vh6Sd89ur86oLcr'
+        'sd_KjTLwJizoQmP5YaM'
       );
     }
   }
 
-  async sd_gUTqStlnBMJAiQCM(bh, parentSpanInst) {
+  async sd_17Ky5X9c0Hl1okR5(bh, parentSpanInst) {
     try {
       bh.web.res.status(200).send(bh.payload);
 
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_gUTqStlnBMJAiQCM');
+      return await this.errorHandler(bh, e, 'sd_17Ky5X9c0Hl1okR5');
     }
   }
 

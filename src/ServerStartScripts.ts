@@ -10,7 +10,6 @@ import { sep } from 'path'; //_splitter_
 //append_imports_end
 export let StartScripts = [
   //appendnew_flow
-
   //__start__script__ndefault-sql
   async () => {
     const dbConfig = configNodes.default['db-config'];

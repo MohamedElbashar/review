@@ -1,0 +1,15 @@
+{
+    "/ifoundry/motor-rate": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "ifoundry_apis"
+            ]
+        }
+    }
+}

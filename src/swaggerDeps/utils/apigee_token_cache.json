@@ -1,5 +1,5 @@
 {
-    "/document/quote/summary": {
+    "/auth_code": {
         "post": {
             "summary": "",
             "description": "",
@@ -8,13 +8,11 @@
             "parameters": [],
             "responses": {},
             "tags": [
-                "apis"
+                "apigee_token_cache"
             ]
         }
     },
-    "/upload-document": {},
-    "/delete-document": {},
-    "/document/quote/vehicle-declaration": {
+    "/auth": {
         "post": {
             "summary": "",
             "description": "",
@@ -23,7 +21,7 @@
             "parameters": [],
             "responses": {},
             "tags": [
-                "apis"
+                "apigee_token_cache"
             ]
         }
     }

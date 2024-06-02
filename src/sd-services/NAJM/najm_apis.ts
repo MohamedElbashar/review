@@ -3,11 +3,13 @@ let instance = null;
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
+import * as cookieParser from 'cookie-parser'; //_splitter_
 import { SDBaseService } from '../../services/SDBaseService'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
+import * as SSD_SERVICE_ID_sd_J6X86g975hUioNVw from './flows'; //_splitter_
 //append_imports_end
-export class flows {
+export class najm_apis {
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -23,7 +25,7 @@ export class flows {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'flows';
+    this.serviceName = 'najm_apis';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -38,7 +40,7 @@ export class flows {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new flows(
+      instance = new najm_apis(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -67,91 +69,93 @@ export class flows {
   }
 
   async mountTimers() {
-    //appendnew_flow_flows_TimerStart
+    //appendnew_flow_najm_apis_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: flows');
-    //appendnew_flow_flows_MiddlewareStart
+    log.debug('mounting all middlewares for service :: najm_apis');
+    //appendnew_flow_najm_apis_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: flows');
-    //appendnew_flow_flows_HttpIn
-  }
-  //   service flows_flows
+    log.debug('mounting all paths for service :: najm_apis');
 
-  async ddmmyyy(
-    parentSpanInst,
-    inputDate: any = undefined,
-    separator = '',
-    ...others
-  ) {
-    const spanInst = this.tracerService.createSpan('ddmmyyy', parentSpanInst);
-    let bh: any = {
-      input: {
-        inputDate,
-        separator,
-      },
-      local: {
-        outputDate: undefined,
-      },
-    };
-    try {
-      bh = this.sdService.__constructDefault(bh);
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_kMsHObbNi557EZjk(bh, parentSpanInst);
-      //appendnew_next_ddmmyyy
-      return (
-        // formatting output variables
-        {
-          input: {},
-          local: {
-            outputDate: bh.local.outputDate,
-          },
+    this.app['post'](
+      `${this.serviceBasePath}/najm/ncd`,
+      cookieParser(),
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'pre',
+        this.generatedMiddlewares
+      ),
+
+      async (req, res, next) => {
+        let bh: any = {};
+        try {
+          bh = this.sdService.__constructDefault(
+            { local: {}, input: {} },
+            req,
+            res,
+            next
+          );
+          let parentSpanInst = null;
+          bh = await this.getInfoSeq(bh, parentSpanInst);
+          //appendnew_next_sd_8RCIA2xltNwldqZT
+        } catch (e) {
+          return await this.errorHandler(bh, e, 'sd_8RCIA2xltNwldqZT');
         }
-      );
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_P0cdnejWjXufQM38',
-        spanInst,
-        'ddmmyyy'
-      );
-    }
+      },
+      this.sdService.getMiddlesWaresBySequenceId(
+        null,
+        'post',
+        this.generatedMiddlewares
+      )
+    );
+    //appendnew_flow_najm_apis_HttpIn
   }
-  //appendnew_flow_flows_start
+  //   service flows_najm_apis
 
-  async sd_kMsHObbNi557EZjk(bh, parentSpanInst) {
+  //appendnew_flow_najm_apis_start
+
+  async getInfoSeq(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_kMsHObbNi557EZjk',
+      'getInfoSeq',
       parentSpanInst
     );
     try {
-      const seperator = bh.input.separator || '';
+      const SSD_SERVICE_ID_sd_J6X86g975hUioNVwInstance: SSD_SERVICE_ID_sd_J6X86g975hUioNVw.flows =
+        SSD_SERVICE_ID_sd_J6X86g975hUioNVw.flows.getInstance();
+      let outputVariables =
+        await SSD_SERVICE_ID_sd_J6X86g975hUioNVwInstance.ncd(
+          spanInst,
+          bh.input.body.vehicleIdentifier,
+          bh.input.body.vehicleId,
+          bh.input.body.policyHolderId
+        );
+      bh.response = outputVariables.local.result;
 
-      const date = new Date(bh.input.inputDate);
-      const yyyy = date.getFullYear();
-      const mm =
-        date.getMonth() + 1 < 10
-          ? '0' + (date.getMonth() + 1)
-          : date.getMonth() + 1;
-      const dd = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
-      bh.local.outputDate = [dd, mm, yyyy].join(seperator);
-
-      // bh.local.outputDate  = moment(date).format("MMM-DD-YY");
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_sd_kMsHObbNi557EZjk
+      await this.sd_ZbtzFakokxbjb6a8(bh, parentSpanInst);
+      //appendnew_next_getInfoSeq
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_kMsHObbNi557EZjk',
+        'sd_oVhVJJr0PbQMeCb8',
         spanInst,
-        'sd_kMsHObbNi557EZjk'
+        'getInfoSeq'
       );
+    }
+  }
+
+  async sd_ZbtzFakokxbjb6a8(bh, parentSpanInst) {
+    try {
+      bh.web.res.status(200).send(bh.response);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_ZbtzFakokxbjb6a8');
     }
   }
 
@@ -176,5 +180,5 @@ export class flows {
       throw e;
     }
   }
-  //appendnew_flow_flows_Catch
+  //appendnew_flow_najm_apis_Catch
 }

@@ -1,0 +1,28 @@
+{
+    "/spl/addressinfo/id": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "spl_apis"
+            ]
+        }
+    },
+    "/spl/addressinfo/cr": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "spl_apis"
+            ]
+        }
+    }
+}

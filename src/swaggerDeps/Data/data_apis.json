@@ -1,0 +1,15 @@
+{
+    "/quote/product-codes": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "data_apis"
+            ]
+        }
+    }
+}

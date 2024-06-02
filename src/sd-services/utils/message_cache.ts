@@ -7,7 +7,8 @@ import { SDBaseService } from '../../services/SDBaseService'; //_splitter_
 import { TracerService } from '../../services/TracerService'; //_splitter_
 import log from '../../utils/Logger'; //_splitter_
 //append_imports_end
-export class flows {
+export class message_cache {
+  public systemMessages: any;
   private sdService = new SDBaseService();
   private tracerService = new TracerService();
   private app;
@@ -23,7 +24,7 @@ export class flows {
     middlewareCall,
     globalTimers
   ) {
-    this.serviceName = 'flows';
+    this.serviceName = 'message_cache';
     this.app = app;
     this.serviceBasePath = this.app.settings.base;
     this.generatedMiddlewares = generatedeMiddlewares;
@@ -38,7 +39,7 @@ export class flows {
     globalTimers?
   ) {
     if (!instance) {
-      instance = new flows(
+      instance = new message_cache(
         app,
         generatedeMiddlewares,
         routeCall,
@@ -67,86 +68,50 @@ export class flows {
   }
 
   async mountTimers() {
-    //appendnew_flow_flows_TimerStart
+    //appendnew_flow_message_cache_TimerStart
   }
 
   private mountAllMiddlewares() {
-    log.debug('mounting all middlewares for service :: flows');
-    //appendnew_flow_flows_MiddlewareStart
+    log.debug('mounting all middlewares for service :: message_cache');
+    //appendnew_flow_message_cache_MiddlewareStart
   }
 
   private mountAllPaths() {
-    log.debug('mounting all paths for service :: flows');
-    //appendnew_flow_flows_HttpIn
+    log.debug('mounting all paths for service :: message_cache');
+    //appendnew_flow_message_cache_HttpIn
   }
-  //   service flows_flows
+  //   service flows_message_cache
 
-  async getStrapiTemplate(parentSpanInst, templateKey = 'quote', ...others) {
-    const spanInst = this.tracerService.createSpan(
-      'getStrapiTemplate',
-      parentSpanInst
-    );
-    let bh: any = {
-      input: {
-        templateKey,
-      },
-      local: {
-        templateSource: undefined,
-      },
-    };
-    try {
-      bh = this.sdService.__constructDefault(bh);
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_imyJVAj6T4zRDvkm(bh, parentSpanInst);
-      //appendnew_next_getStrapiTemplate
-      return (
-        // formatting output variables
-        {
-          input: {},
-          local: {
-            templateSource: bh.local.templateSource,
-          },
-        }
-      );
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_xKZw0WOGfwO5pgsy',
-        spanInst,
-        'getStrapiTemplate'
-      );
-    }
-  }
-
-  async getStrapiCoverTemplate(
+  async getMessage(
     parentSpanInst,
-    templateKey = 'quote',
+    messageCode = '',
+    localeCode = 'en',
     ...others
   ) {
     const spanInst = this.tracerService.createSpan(
-      'getStrapiCoverTemplate',
+      'getMessage',
       parentSpanInst
     );
     let bh: any = {
       input: {
-        templateKey,
+        messageCode,
+        localeCode,
       },
       local: {
-        templateSource: undefined,
+        message: '',
       },
     };
     try {
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_P4K4iRD5VS8UMpxX(bh, parentSpanInst);
-      //appendnew_next_getStrapiCoverTemplate
+      bh = await this.getMsgCache(bh, parentSpanInst);
+      //appendnew_next_getMessage
       return (
         // formatting output variables
         {
           input: {},
           local: {
-            templateSource: bh.local.templateSource,
+            message: bh.local.message,
           },
         }
       );
@@ -154,48 +119,105 @@ export class flows {
       return await this.errorHandler(
         bh,
         e,
-        'sd_XSHz10sHgXouuJJ9',
+        'sd_g8ZsrFIgLgx2vYG7',
         spanInst,
-        'getStrapiCoverTemplate'
+        'getMessage'
       );
     }
   }
-  //appendnew_flow_flows_start
+  //appendnew_flow_message_cache_start
 
-  async sd_imyJVAj6T4zRDvkm(bh, parentSpanInst) {
+  async getMsgCache(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_imyJVAj6T4zRDvkm',
+      'getMsgCache',
       parentSpanInst
     );
     try {
-      bh.url = process.env.QUOATAION_TEMPLATE_URL;
-      // https://dev-strapi.alrajhitakaful.com/uploads/quotation_template_b7701d0699.html
-      // if(bh.input.templateKey === 'quote'){
-      //     bh.url += "uploads/quotation_template_b7701d0699.html"
-      // }
-      console.log(bh.url);
-
+      bh.local.allMessages = this.systemMessages;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.strapiHttp(bh, parentSpanInst);
-      //appendnew_next_sd_imyJVAj6T4zRDvkm
+      bh = await this.checkCache(bh, parentSpanInst);
+      //appendnew_next_getMsgCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_imyJVAj6T4zRDvkm',
+        'sd_L8ubOXEcQ4wW106K',
         spanInst,
-        'sd_imyJVAj6T4zRDvkm'
+        'getMsgCache'
       );
     }
   }
 
-  async strapiHttp(bh, parentSpanInst) {
+  async checkCache(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'checkCache',
+      parentSpanInst
+    );
+    try {
+      if (
+        this.sdService.operators['empty'](
+          bh.local.allMessages,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_MbQIuqmuMQVMCciP(bh, parentSpanInst);
+      } else if (
+        this.sdService.operators['null'](
+          bh.local.allMessages,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = await this.sd_MbQIuqmuMQVMCciP(bh, parentSpanInst);
+      } else {
+        bh = await this.sd_5ysh0uaftnrTTiBa(bh, parentSpanInst);
+      }
+      this.tracerService.sendData(spanInst, bh);
+
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_PIS291YwkKmF7yt0',
+        spanInst,
+        'checkCache'
+      );
+    }
+  }
+
+  async sd_MbQIuqmuMQVMCciP(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'sd_MbQIuqmuMQVMCciP',
+      parentSpanInst
+    );
+    try {
+      bh.url = process.env.DB_API_URL + '/utils/system-messages';
+      this.tracerService.sendData(spanInst, bh);
+      bh = await this.sd_VRx89nVbfqdSov3I(bh, parentSpanInst);
+      //appendnew_next_sd_MbQIuqmuMQVMCciP
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_MbQIuqmuMQVMCciP',
+        spanInst,
+        'sd_MbQIuqmuMQVMCciP'
+      );
+    }
+  }
+
+  async sd_VRx89nVbfqdSov3I(bh, parentSpanInst) {
     try {
       let requestOptions: any = {
         url: bh.url,
         timeout: 30000,
-        method: 'get',
+        method: 'post',
         headers: {},
         followRedirects: true,
         cookies: {},
@@ -204,7 +226,7 @@ export class flows {
         paytoqs: false,
         proxyConfig: undefined,
         tlsConfig: undefined,
-        ret: 'arraybuffer',
+        ret: 'json',
         params: {},
         username: undefined,
         password: undefined,
@@ -234,138 +256,80 @@ export class flows {
         requestOptions.token
       );
 
-      bh.data = responseMsg;
-      bh = await this.strapiTemplate(bh, parentSpanInst);
-      //appendnew_next_strapiHttp
+      bh.local.allMessages = responseMsg;
+      bh = await this.sd_er15lypJuG4L7N6Z(bh, parentSpanInst);
+      //appendnew_next_sd_VRx89nVbfqdSov3I
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_WzbXrkHu49eGEIH0');
+      return await this.errorHandler(bh, e, 'sd_VRx89nVbfqdSov3I');
     }
   }
 
-  async strapiTemplate(bh, parentSpanInst) {
+  async sd_er15lypJuG4L7N6Z(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'strapiTemplate',
+      'sd_er15lypJuG4L7N6Z',
       parentSpanInst
     );
     try {
-      const buffer = Buffer.from(bh.data?.payload);
-      bh.local.templateSource = buffer.toString('utf8');
-      console.log(bh.local.templateSource);
+      bh.local.allMessages = bh.local.allMessages['payload'];
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_strapiTemplate
+      bh = await this.setMsgCache(bh, parentSpanInst);
+      //appendnew_next_sd_er15lypJuG4L7N6Z
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_nNUq68OQ0PVVsQof',
+        'sd_er15lypJuG4L7N6Z',
         spanInst,
-        'strapiTemplate'
+        'sd_er15lypJuG4L7N6Z'
       );
     }
   }
 
-  async sd_P4K4iRD5VS8UMpxX(bh, parentSpanInst) {
+  async setMsgCache(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'sd_P4K4iRD5VS8UMpxX',
+      'setMsgCache',
       parentSpanInst
     );
     try {
-      bh.url = process.env.COVER_TEMPLATE_URL;
-      // https://dev-strapi.alrajhitakaful.com/uploads/quotation_template_b7701d0699.html
-      // if(bh.input.templateKey === 'quote'){
-      //     bh.url += "uploads/quotation_template_b7701d0699.html"
-      // }
-      console.log(bh.url);
-
+      this.systemMessages = bh.local.allMessages;
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.strapiHttp1(bh, parentSpanInst);
-      //appendnew_next_sd_P4K4iRD5VS8UMpxX
+      bh = await this.sd_5ysh0uaftnrTTiBa(bh, parentSpanInst);
+      //appendnew_next_setMsgCache
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_P4K4iRD5VS8UMpxX',
+        'sd_zGEOlWccovFbgxm4',
         spanInst,
-        'sd_P4K4iRD5VS8UMpxX'
+        'setMsgCache'
       );
     }
   }
 
-  async strapiHttp1(bh, parentSpanInst) {
-    try {
-      let requestOptions: any = {
-        url: bh.url,
-        timeout: 30000,
-        method: 'get',
-        headers: {},
-        followRedirects: true,
-        cookies: {},
-        authType: undefined,
-        body: undefined,
-        paytoqs: false,
-        proxyConfig: undefined,
-        tlsConfig: undefined,
-        ret: 'arraybuffer',
-        params: {},
-        username: undefined,
-        password: undefined,
-        token: undefined,
-        useQuerystring: false,
-      };
-      requestOptions.rejectUnauthorized = false;
-      requestOptions.tlsConfig = undefined;
-      requestOptions.proxyConfig = undefined;
-      let responseMsg: any = await this.sdService.httpRequest(
-        requestOptions.url,
-        requestOptions.timeout,
-        requestOptions.method,
-        requestOptions.headers,
-        requestOptions.followRedirects,
-        requestOptions.cookies,
-        requestOptions.authType,
-        requestOptions.body,
-        requestOptions.paytoqs,
-        requestOptions.proxyConfig,
-        requestOptions.tlsConfig,
-        requestOptions.ret,
-        requestOptions.params,
-        requestOptions.rejectUnauthorized,
-        requestOptions.username,
-        requestOptions.password,
-        requestOptions.token
-      );
-
-      bh.data = responseMsg;
-      bh = await this.strapiTemplate1(bh, parentSpanInst);
-      //appendnew_next_strapiHttp1
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_wyBVI6WEFXJRH2SF');
-    }
-  }
-
-  async strapiTemplate1(bh, parentSpanInst) {
+  async sd_5ysh0uaftnrTTiBa(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'strapiTemplate1',
+      'sd_5ysh0uaftnrTTiBa',
       parentSpanInst
     );
     try {
-      const buffer = Buffer.from(bh.data?.payload);
-      bh.local.templateSource = buffer.toString('utf8');
-      // console.log(bh.local.templateSource)
+      let msg = bh.local.allMessages.find(
+        (x) => x.message_code == bh.input.messageCode
+      );
+      bh.local.message = msg?.[bh.input.localeCode] || msg?.['en'] || '';
+
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_strapiTemplate1
+      //appendnew_next_sd_5ysh0uaftnrTTiBa
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_i9awzVxDezCRtDLi',
+        'sd_5ysh0uaftnrTTiBa',
         spanInst,
-        'strapiTemplate1'
+        'sd_5ysh0uaftnrTTiBa'
       );
     }
   }
@@ -391,5 +355,5 @@ export class flows {
       throw e;
     }
   }
-  //appendnew_flow_flows_Catch
+  //appendnew_flow_message_cache_Catch
 }

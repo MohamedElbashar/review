@@ -46,9 +46,8 @@ console.log('process.env.pm_id', process.env.pm_id);
 
     // Call midlewares
     app.use(helmet());
-   app.use(express.json({ limit: '1000mb'}));
-
-    app.use(express.json());
+    app.use(express.json({ limit: '100mb'}));
+    // app.use(express.urlencoded({ extended: true, limit: '100mb'}));
     // load global pre middlewares here
     app.set('base', contextPath);
     /****************************

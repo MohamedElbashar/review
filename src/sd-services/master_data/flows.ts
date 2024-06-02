@@ -81,14 +81,20 @@ export class flows {
   }
   //   service flows_flows
 
-  async searchMasterData(parentSpanInst, body: any = undefined, ...others) {
+  async searchMasterData(
+    parentSpanInst,
+    search_type: any = '',
+    filter: any = {},
+    ...others
+  ) {
     const spanInst = this.tracerService.createSpan(
       'searchMasterData',
       parentSpanInst
     );
     let bh: any = {
       input: {
-        body,
+        search_type,
+        filter,
       },
       local: {
         result: undefined,
@@ -97,7 +103,7 @@ export class flows {
     try {
       bh = this.sdService.__constructDefault(bh);
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.setUrl(bh, parentSpanInst);
+      bh = await this.sd_XizghoT6lzVDzv4v(bh, parentSpanInst);
       //appendnew_next_searchMasterData
       return (
         // formatting output variables
@@ -112,177 +118,174 @@ export class flows {
       return await this.errorHandler(
         bh,
         e,
-        'sd_iLfN2hhlnziPfrsU',
+        'sd_VNBJTloawHwRNwU3',
         spanInst,
         'searchMasterData'
       );
     }
   }
-
-  async getProducts(parentSpanInst, body: any = undefined, ...others) {
-    const spanInst = this.tracerService.createSpan(
-      'getProducts',
-      parentSpanInst
-    );
-    let bh: any = {
-      input: {
-        body,
-      },
-      local: {
-        result: undefined,
-      },
-    };
-    try {
-      bh = this.sdService.__constructDefault(bh);
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.setUrl1(bh, parentSpanInst);
-      //appendnew_next_getProducts
-      return (
-        // formatting output variables
-        {
-          input: {},
-          local: {
-            result: bh.local.result,
-          },
-        }
-      );
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_yGj6UU7ZFmbJHMyW',
-        spanInst,
-        'getProducts'
-      );
-    }
-  }
   //appendnew_flow_flows_start
 
-  async setUrl(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan('setUrl', parentSpanInst);
-    try {
-      bh.url = process.env.INT_MS_URL + 'master_data/search';
-
-      this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_yJdwTDilJ0uSTAO1(bh, parentSpanInst);
-      //appendnew_next_setUrl
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(
-        bh,
-        e,
-        'sd_KSdG8Vb0xZ5leukU',
-        spanInst,
-        'setUrl'
-      );
-    }
-  }
-
-  async sd_yJdwTDilJ0uSTAO1(bh, parentSpanInst) {
-    try {
-      let requestOptions: any = {
-        url: bh.url,
-        timeout: 30000,
-        method: 'post',
-        headers: {},
-        followRedirects: true,
-        cookies: {},
-        authType: undefined,
-        body: bh.input.body,
-        paytoqs: false,
-        proxyConfig: undefined,
-        tlsConfig: undefined,
-        ret: 'json',
-        params: {},
-        username: undefined,
-        password: undefined,
-        token: undefined,
-        useQuerystring: false,
-      };
-      requestOptions.rejectUnauthorized = false;
-      requestOptions.tlsConfig = undefined;
-      requestOptions.proxyConfig = undefined;
-      let responseMsg: any = await this.sdService.httpRequest(
-        requestOptions.url,
-        requestOptions.timeout,
-        requestOptions.method,
-        requestOptions.headers,
-        requestOptions.followRedirects,
-        requestOptions.cookies,
-        requestOptions.authType,
-        requestOptions.body,
-        requestOptions.paytoqs,
-        requestOptions.proxyConfig,
-        requestOptions.tlsConfig,
-        requestOptions.ret,
-        requestOptions.params,
-        requestOptions.rejectUnauthorized,
-        requestOptions.username,
-        requestOptions.password,
-        requestOptions.token
-      );
-
-      bh.local.result = responseMsg;
-      bh = await this.setResponse(bh, parentSpanInst);
-      //appendnew_next_sd_yJdwTDilJ0uSTAO1
-      return bh;
-    } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_yJdwTDilJ0uSTAO1');
-    }
-  }
-
-  async setResponse(bh, parentSpanInst) {
+  async sd_XizghoT6lzVDzv4v(bh, parentSpanInst) {
     const spanInst = this.tracerService.createSpan(
-      'setResponse',
+      'sd_XizghoT6lzVDzv4v',
       parentSpanInst
     );
     try {
-      bh.local.result = bh.local.result['payload'];
+      switch (bh.input.search_type) {
+        case 'nationality':
+        case 'country':
+          bh.input.entityID = process.env.NATIONALITY_ENTITY;
+          break;
+        case 'vehicle':
+          bh.input.entityID = process.env.VEHICLE_ENTITY;
+          break;
+        case 'postal':
+          bh.input.entityID = process.env.POSTAL_ENTITY;
+          break;
+        case 'cities':
+          bh.input.entityID = process.env.CITIES_ENTITY;
+          break;
+        case 'usage_type':
+          bh.input.entityID = process.env.USAGE_TYPE_ENTITY;
+          break;
+        case 'usage_type_sme':
+          bh.input.entityID = process.env.USAGE_TYPE_SME_ENTITY;
+          break;
+        case 'marital_status':
+          bh.input.entityID = process.env.MARITALSTATUS_ENTITY;
+          break;
+        case 'color':
+          bh.input.entityID = process.env.COLOR_ENTITY;
+          break;
+        case 'plans_ind':
+          bh.input.entityID = process.env.PRODUCT_IND_ENTITY;
+          break;
+        case 'plans_sme':
+          bh.input.entityID = process.env.PRODUCT_SME_ENTITY;
+          break;
+        case 'files':
+          bh.input.entityID = process.env.FILES_ENTITY;
+          break;
+        case 'discount_national_id':
+          bh.input.entityID = process.env.DISCOUNT_NATIONAL_ID_ENTITY;
+          break;
+        case 'motor_discount':
+          bh.input.entityID = process.env.MOTOR_DISCOUNT_CPPA_ENTITY;
+          break;
+        case 'drilling_discount':
+          bh.input.entityID = process.env.DISCOUNT_ARABIAN_DRILLING_ENTITY;
+          break;
+        case 'htp_factor':
+          bh.input.entityID = process.env.HTP_FACTOR_ENTITY;
+          break;
+        case 'petro_rabigh_discount':
+          bh.input.entityID =
+            process.env.PETRORABIGH_DISCOUNT_NATIONAL_ID_ENTITY;
+          break;
+        case 'vehicle_make':
+          bh.input.entityID = process.env.VEHICLE_MAKE_ENTITY;
+          break;
+        case 'branch':
+          bh.input.entityID = process.env.BRANCHES_ENTITY;
+          break;
+        case 'region':
+          bh.input.entityID = process.env.REGIONS_ENTITY;
+          break;
+        case 'business_channel_branch':
+          bh.input.entityID = process.env.BRANCHES_BC_ENTITY;
+          break;
+        case 'discount_coupon':
+          bh.input.entityID = process.env.COUPON_CODES_ENTITY;
+          break;
+        case 'scheme_discount_table':
+          bh.input.entityID = process.env.SCHEME_DISCOUNT_TABLE_ENTITY;
+          break;
 
+        case 'najm_city':
+          bh.input.entityID = process.env.NAJM_CITIES_ENTITY_ID;
+          break;
+        case 'najm_color':
+          bh.input.entityID = process.env.NAJM_COLOR_ENTITY_ID;
+          break;
+        case 'najm_country':
+          bh.input.entityID = process.env.NAJM_COUNTRY_CODES_ENTITY_ID;
+          break;
+        case 'najm_make':
+          bh.input.entityID = process.env.NAJM_MAKE_ENTITY_ID;
+          break;
+        case 'najm_model':
+          bh.input.entityID = process.env.NAJM_MODEL_ENTITY_ID;
+          break;
+        case 'najm_plate_nos':
+          bh.input.entityID = process.env.NAJM_PLATE_NOS_ENTITY_ID;
+          break;
+        case 'najm_usage_type':
+          bh.input.entityID = process.env.NAJM_USAGE_TYPES_ENTITY_ID;
+          break;
+        case 'najm_body':
+          bh.input.entityID = process.env.NAJM_BODY_CODES_ENTITY_ID;
+          break;
+        case 'discount_coupon_b2c':
+          bh.input.entityID = process.env.COUPON_CODE_B2C_ENTITY;
+          break;
+        default:
+      }
       this.tracerService.sendData(spanInst, bh);
-      //appendnew_next_setResponse
+      bh = await this.request(bh, parentSpanInst);
+      //appendnew_next_sd_XizghoT6lzVDzv4v
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_x4ODibRbS6UpS1xy',
+        'sd_XizghoT6lzVDzv4v',
         spanInst,
-        'setResponse'
+        'sd_XizghoT6lzVDzv4v'
       );
     }
   }
 
-  async setUrl1(bh, parentSpanInst) {
-    const spanInst = this.tracerService.createSpan('setUrl1', parentSpanInst);
+  async request(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan('request', parentSpanInst);
     try {
-      bh.url = process.env.INT_MS_URL + 'master_data/products/list';
+      bh.url = `${process.env.REELS_URL}/records/filter/${process.env.DATASET_ID}/${bh.input.entityID}`;
+      bh.headers = {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        organisation: process.env.REELS_ORG,
+      };
+
+      bh.body = {
+        multiplicity: 'multiple',
+        filter: bh.input.filter || {},
+      };
       this.tracerService.sendData(spanInst, bh);
-      bh = await this.sd_xgPYTnFFd9oKV752(bh, parentSpanInst);
-      //appendnew_next_setUrl1
+      bh = await this.sd_9wWDGbrkNDIeRE5A(bh, parentSpanInst);
+      //appendnew_next_request
       return bh;
     } catch (e) {
       return await this.errorHandler(
         bh,
         e,
-        'sd_uGDt4Opr0qJLcqUn',
+        'sd_iKRUgbGgWxizxZj5',
         spanInst,
-        'setUrl1'
+        'request'
       );
     }
   }
 
-  async sd_xgPYTnFFd9oKV752(bh, parentSpanInst) {
+  async sd_9wWDGbrkNDIeRE5A(bh, parentSpanInst) {
     try {
       let requestOptions: any = {
         url: bh.url,
         timeout: 30000,
         method: 'post',
-        headers: {},
+        headers: bh.headers,
         followRedirects: true,
         cookies: {},
         authType: undefined,
-        body: bh.input.body,
+        body: bh.body,
         paytoqs: false,
         proxyConfig: undefined,
         tlsConfig: undefined,
@@ -318,10 +321,10 @@ export class flows {
 
       bh.local.result = responseMsg;
       bh = await this.setResponse0(bh, parentSpanInst);
-      //appendnew_next_sd_xgPYTnFFd9oKV752
+      //appendnew_next_sd_9wWDGbrkNDIeRE5A
       return bh;
     } catch (e) {
-      return await this.errorHandler(bh, e, 'sd_xgPYTnFFd9oKV752');
+      return await this.errorHandler(bh, e, 'sd_9wWDGbrkNDIeRE5A');
     }
   }
 
@@ -331,7 +334,8 @@ export class flows {
       parentSpanInst
     );
     try {
-      bh.local.result = bh.local.result['payload'];
+      bh.local.result = bh.local.result?.['payload']?.['records'] || [];
+
       this.tracerService.sendData(spanInst, bh);
       //appendnew_next_setResponse0
       return bh;
@@ -339,9 +343,31 @@ export class flows {
       return await this.errorHandler(
         bh,
         e,
-        'sd_RWInNLXu8wo8A2ga',
+        'sd_S7AApdoQPKHKFsVk',
         spanInst,
         'setResponse0'
+      );
+    }
+  }
+
+  async setResponse1(bh, parentSpanInst) {
+    const spanInst = this.tracerService.createSpan(
+      'setResponse1',
+      parentSpanInst
+    );
+    try {
+      bh.local.result = [];
+
+      this.tracerService.sendData(spanInst, bh);
+      //appendnew_next_setResponse1
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(
+        bh,
+        e,
+        'sd_aAZ0JPSQaLgGrrBb',
+        spanInst,
+        'setResponse1'
       );
     }
   }
@@ -361,11 +387,28 @@ export class flows {
     bh.errorSource = src;
     bh.errorFunName = functionName;
     this.tracerService.sendData(parentSpanInst, bh, true);
-    if (bh.web.next) {
-      bh.web.next(e);
+    if (
+      false ||
+      (await this.sd_tpVSMjTo2mtPoFI9(bh, parentSpanInst))
+      /*appendnew_next_Catch*/
+    ) {
+      return bh;
     } else {
-      throw e;
+      if (bh.web.next) {
+        bh.web.next(e);
+      } else {
+        throw e;
+      }
     }
+  }
+  async sd_tpVSMjTo2mtPoFI9(bh, parentSpanInst) {
+    const nodes = ['sd_9wWDGbrkNDIeRE5A'];
+    if (nodes.includes(bh.errorSource)) {
+      bh = await this.setResponse1(bh, parentSpanInst);
+      //appendnew_next_sd_tpVSMjTo2mtPoFI9
+      return true;
+    }
+    return false;
   }
   //appendnew_flow_flows_Catch
 }

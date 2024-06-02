@@ -1,0 +1,15 @@
+{
+    "/ad/lookup": {
+        "post": {
+            "summary": "",
+            "description": "",
+            "consumes": [],
+            "produces": [],
+            "parameters": [],
+            "responses": {},
+            "tags": [
+                "lookup_users"
+            ]
+        }
+    }
+}
